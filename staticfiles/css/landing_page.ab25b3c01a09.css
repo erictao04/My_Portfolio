@@ -1,0 +1,58 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(233, 239, 245);
+}
+
+header {
+  display: grid;
+  background-color: rgb(22, 17, 78);
+  height: 10vh;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: normal;
+}
+
+section {
+  padding: 4vh 7vw 0 7vw;
+}
+
+section .main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+  list-style: none;
+  border: 2px solid rgb(154, 154, 212);
+  border-radius: 10px;
+  padding-inline-start: 0;
+}
+
+section .main .logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding-inline-start: 0;
+  justify-items: center;
+}
+
+section .main .description {
+  font-size: 2rem;
+  text-align: center;
+}
+
+section .main .description a {
+  text-decoration: none;
+  color: rgb(31, 31, 212);
+}
+
+section .main .description a:hover {
+  text-decoration: underline;
+}

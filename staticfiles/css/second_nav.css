@@ -1,0 +1,81 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: rgb(233, 239, 245);
+  overflow-x: hidden;
+  color: rgb(70, 70, 78);
+}
+
+nav.leagues .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0 10vw 0 10vw;
+  background-color: rgb(154, 154, 212);
+}
+nav.leagues .grid > li {
+  text-align: center;
+  padding: 1rem 0 1rem 0;
+}
+nav.leagues .grid > li > a {
+  text-decoration: none;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+nav.leagues .grid > li:hover {
+  background-color: rgb(187, 184, 216);
+  transition: 0.3s;
+}
+
+nav.leagues .grid > li:hover a {
+  color: rgb(62, 62, 180);
+}
+
+nav.leagues .dropdown {
+  display: grid;
+  gap: 1.5vh;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  position: absolute;
+  left: 7.5vw;
+  width: 85vw;
+  margin: 1rem 0 0 0;
+  padding: 3vh 0 3vh 0;
+  visibility: hidden;
+  font-size: 2rem;
+  background-color: rgb(233, 239, 245);
+  border-bottom: 2px solid rgb(154, 154, 212);
+  border-left: 2px solid rgb(154, 154, 212);
+  border-right: 2px solid rgb(154, 154, 212);
+  border-radius: 0 0 3rem 3rem;
+}
+
+nav.leagues li:hover .dropdown {
+  visibility: visible;
+  z-index: 1;
+}
+
+nav.leagues .grid > li .dropdown li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3vh;
+}
+
+nav.leagues .grid > li .dropdown li a {
+  text-decoration: none;
+  color: rgb(70, 70, 78);
+}
+
+nav.leagues .grid > li .dropdown li a:hover {
+  color: rgb(62, 62, 180);
+  text-decoration: underline;
+  transition: 0.3s;
+}

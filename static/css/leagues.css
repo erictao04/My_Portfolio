@@ -1,0 +1,27 @@
+html {
+  font-size: 10px;
+}
+
+section.leagues ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+  padding: 0 10vw 0 10vw;
+  font-size: 2rem;
+  gap: 7vh 3vw;
+  margin-top: 7.5vh;
+  align-items: center;
+}
+
+section.leagues ul .league {
+  border: 2px solid rgb(154, 154, 212);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+section.leagues ul .league .message {
+  padding-right: 10px;
+}

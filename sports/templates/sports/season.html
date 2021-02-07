@@ -39,41 +39,45 @@
     <div class="header">
         Exports Stats (Format)
     </div>
-    <ul class="export">
-        <li><form method="post">
-            {% csrf_token %}
-            <button type="submit" name="xlsx_script">
-                {% if post_excel %}
-                    <i class="fa fa-check"></i>
-                {% endif %}
-                Excel</button>
-                
-        </form></li>
-        <li><form method="post">
-            {% csrf_token %}
-            <button type="submit" name="pdf_script">
-                {% if post_pdf %}
-                    <i class="fa fa-check"></i>
-                {% endif %}
-                PDF</button>
-        </form></li>
-        <li><form method="post">
-            {% csrf_token %}
-            <button type="submit" name="csv_script">
-                {% if post_csv %}
-                    <i class="fa fa-check"></i>
-                {% endif %}
-                CSV</button>
-        </form></li>
-        <li><form method="post">
-            {% csrf_token %}
-            <button type="submit" name="json_script">
-                {% if post_json %}
-                    <i class="fa fa-check"></i>
-                {% endif %}
-                JSON</button>
-        </form></li>
-    </ul>
+    {% if league.name == "NHL" %}
+        <ul class="export">
+            <li><form method="post">
+                {% csrf_token %}
+                <button type="submit" name="xlsx_script">
+                    {% if post_excel %}
+                        <i class="fa fa-check"></i>
+                    {% endif %}
+                    Excel</button>
+                    
+            </form></li>
+            <li><form method="post">
+                {% csrf_token %}
+                <button type="submit" name="pdf_script">
+                    {% if post_pdf %}
+                        <i class="fa fa-check"></i>
+                    {% endif %}
+                    PDF</button>
+            </form></li>
+            <li><form method="post">
+                {% csrf_token %}
+                <button type="submit" name="csv_script">
+                    {% if post_csv %}
+                        <i class="fa fa-check"></i>
+                    {% endif %}
+                    CSV</button>
+            </form></li>
+            <li><form method="post">
+                {% csrf_token %}
+                <button type="submit" name="json_script">
+                    {% if post_json %}
+                        <i class="fa fa-check"></i>
+                    {% endif %}
+                    JSON</button>
+            </form></li>
+        </ul>
+    {% else %}
+        <div class="coming-soon"> Downloading stats for the {{league.name}} is <u>coming soon!</u></div>
+    {% endif %}
     {% if link %}
         {% clean_link link as cleaned_link %}
         <div class="download_link"><a href="{{ cleaned_link }}" target="_blank">Download</a></div>

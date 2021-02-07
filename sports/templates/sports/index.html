@@ -1,5 +1,25 @@
 {% extends "sports/base.html" %}
 {% load sports_extra %}
+{% load static %}
 {% block content %}
-
+<section class="leagues">
+    <ul>
+        <div class="league">
+            <a href="{% url 'sports:league' 'nhl' %}"><img src="{% static 'img/nhl_logo.png' %}" height="100px"></a>
+            <div class="message">View and download stats of any NHL team now!</div>
+        </div>
+        <div class="league">
+            <a href="{% url 'sports:league' 'nba' %}"><img src="{% static 'img/nba_logo.png' %}" height="100px"></a>
+            <div class="message">View stats of any NBA team now!</div>
+        </div>
+        <div class="league">
+            <a href="{% url 'sports:league' 'mlb' %}"><img src="{% static 'img/mlb_logo.png' %}" height="100px"></a>
+            <div class="message">View stats of any MLB team now!</div>
+        </div>
+        <div class="league">
+            <a href="{% url 'sports:league' 'nfl' %}"><img src="{% static 'img/nfl_logo.png' %}" height="100px"></a>
+            <div class="message">View stats of any NFL team now!</div>
+        </div>
+    </ul>
+</section>
 {% endblock %}
