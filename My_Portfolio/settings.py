@@ -31,7 +31,7 @@ SECRET_KEY = config(
 # DEBUG = True
 DEBUG = config('DEBUG', default='False') != 'False'
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['https://shrouded-journey-18268.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
