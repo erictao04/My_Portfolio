@@ -134,7 +134,7 @@ def url_db_values(team, season):
 
 @register.simple_tag
 def clean_link(raw_link):
-    link_regex = re.compile(r'\\media.*\.(xlsx|csv|pdf|json)')
+    link_regex = re.compile(r'\\media.*\.(xlsx|csv|pdf|json|txt)')
     return link_regex.search(raw_link).group(0)
 
 

@@ -1,4 +1,4 @@
-from download_stats import NhlStats
+from sports.programs import NhlStats
 from sports.models import Season, Team
 from django.core.management import call_command
 import django
@@ -9,9 +9,6 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "My_Portfolio.settings")
 
 django.setup()
-
-
-sys.path += [r"E:\Python\NHL_Stats", r'E:\Python\Stock_Data']
 
 
 def update_seasons(team, season):
