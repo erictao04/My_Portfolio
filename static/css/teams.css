@@ -1,0 +1,39 @@
+html {
+  font-size: 10px;
+  margin: 0;
+}
+section.teams {
+  margin-top: 0;
+}
+
+section.teams ul {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  list-style: none;
+  padding: 3vh 7vw 0 7vw;
+}
+
+section.teams ul li {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+}
+
+section.teams ul li a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: rgb(70, 70, 78);
+}
+
+section.teams ul a:hover {
+  color: rgb(62, 62, 180);
+  text-decoration: underline;
+  transition: all 1.5s;
+}
+
+section.teams ul a:active {
+  color: rgb(62, 62, 180);
+}

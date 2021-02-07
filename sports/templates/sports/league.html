@@ -1,0 +1,13 @@
+{% extends "sports/base.html" %}
+{% load sports_extra %}
+{% block content %}
+<section class="teams">
+    <ul>
+        {% lower league.name as lower_league %}
+        {% for team in teams %}
+            {% lower team.name as lower_team %}
+            <li><a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}</a></li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

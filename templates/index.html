@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
+        <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Eric Tao's Portfolio</h1>
+        </header>
+        <section>
+            <ul class="main">
+                <ul class="logos">
+                    <a href="{% url 'sports:league' 'nhl' %}"><img src="{% static 'img/nhl_logo.png' %}" height="100px"></a>
+                    <a href="{% url 'sports:league' 'nba' %}"><img src="{% static 'img/nba_logo.png' %}" height="100px"></a>
+                    <a href="{% url 'sports:league' 'mlb' %}"><img src="{% static 'img/mlb_logo.png' %}" height="100px"></a>
+                    <a href="{% url 'sports:league' 'nfl' %}"><img src="{% static 'img/nfl_logo.png' %}" height="100px"></a>
+                </ul>
+                <div class="description">Want the stats of your favourite teams? Download NHL, NBA, MLB and NFL stats in CSV, PDF, Excel or Json <a href="{% url 'sports:index' %}">here!</a></div>
+            </ul>
+        </section>  
+    </body>
+</html>

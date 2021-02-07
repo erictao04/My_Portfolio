@@ -1,0 +1,82 @@
+{% extends "sports/base.html" %}
+{% load sports_extra %}
+{% block content %}
+<section class="downloads">
+    <div class="header">
+        View Stats Insite
+    </div>
+    <ul class="sites">
+        {% if league.name == "NHL" %}
+            {% url_nhl_values team as url_nhl %}
+            <li><a href="https://www.nhl.com/{{ url_nhl }}/stats/{{ season.year }}" target="_blank">NHL.com</a></li>
+            {% url_db_values team season as url_db %}
+            <li><a href="https://www.hockeydb.com/ihdb/stats/leagues/seasons/teams/{{ url_db }}.html" target="_blank">Hockey DB.com</a></li>
+            {% url_elitep_values team as url_elitep %}
+            <li><a href="https://www.eliteprospects.com/team/{{ url_elitep }}/{{ team.name }}/{{ season.year }}?tab=stats#players" target="_blank">Elite Prospect.com</a></li>
+        {% elif league.name == "NBA" %}
+            {% url_nba_values team season as url_nba %}
+            <li><a href="https://www.nba.com/{{ url_nba }}&SeasonType=Regular%20Season" target="_blank">NBA.com</a></li>
+            {% url_espn_nba_values team season as url_espn_nba %}
+            <li><a href="https://www.espn.com/nba/team/stats/_/name/{{ url_espn_nba }}/seasontype/2" target="_blank">ESPN.com</a></li>
+            {% url_bask_ref_values team season as url_bask_ref %}
+            <li><a href="https://www.basketball-reference.com/teams/{{ url_bask_ref }}.html" target="_blank">Basketball Reference.com</a></li>
+        {% elif league.name == "MLB" %}
+            {% url_mlb_values team season as url_mlb %}
+            <li><a href="https://www.mlb.com/{{ url_mlb }}" target="_blank">MLB.com</a></li>
+            {% url_espn_mlb_values team season as url_espn_mlb %}
+            <li><a href="https://www.espn.com/mlb/team/stats/_/name/{{ url_espn_mlb }}/seasontype/2" target="_blank">ESPN.com</a></li>
+            {% url_base_ref_values team season as url_base_ref %}
+            <li><a href="https://www.baseball-reference.com/teams/{{ url_base_ref }}.shtml" target="_blank">Baseball Reference.com</a></li>
+        {% elif league.name == "NFL" %}
+            {% url_nfl_values team season as url_nfl %}
+            <li><a href="https://www.{{ url_nfl }}" target="_blank">NFL.com</a></li>
+            {% url_espn_nfl_values team season as url_espn_nfl %}
+            <li><a href="https://www.espn.com/nfl/team/stats/_/name/{{ url_espn_nfl }}/seasontype/2" target="_blank">ESPN.com</a></li>
+            {% url_foot_ref_values team season as url_foot_ref %}
+            <li><a href="https://www.pro-football-reference.com/teams/{{ url_foot_ref }}.htm" target="_blank">Pro Football Reference.com</a></li>
+        {% endif %}
+    </ul>
+    <div class="header">
+        Exports Stats (Format)
+    </div>
+    <ul class="export">
+        <li><form method="post">
+            {% csrf_token %}
+            <button type="submit" name="xlsx_script">
+                {% if post_excel %}
+                    <i class="fa fa-check"></i>
+                {% endif %}
+                Excel</button>
+                
+        </form></li>
+        <li><form method="post">
+            {% csrf_token %}
+            <button type="submit" name="pdf_script">
+                {% if post_pdf %}
+                    <i class="fa fa-check"></i>
+                {% endif %}
+                PDF</button>
+        </form></li>
+        <li><form method="post">
+            {% csrf_token %}
+            <button type="submit" name="csv_script">
+                {% if post_csv %}
+                    <i class="fa fa-check"></i>
+                {% endif %}
+                CSV</button>
+        </form></li>
+        <li><form method="post">
+            {% csrf_token %}
+            <button type="submit" name="json_script">
+                {% if post_json %}
+                    <i class="fa fa-check"></i>
+                {% endif %}
+                JSON</button>
+        </form></li>
+    </ul>
+    {% if link %}
+        {% clean_link link as cleaned_link %}
+        <div class="download_link"><a href="{{ cleaned_link }}" target="_blank">Download</a></div>
+    {% endif %}
+</section>
+{% endblock %}

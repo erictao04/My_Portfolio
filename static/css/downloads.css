@@ -1,0 +1,85 @@
+html {
+  font-size: 10px;
+}
+
+section.downloads .header {
+  font-size: 2.5rem;
+  margin: 5vh 0 5vh 0;
+  position: relative;
+  left: 23vw;
+  text-decoration: underline;
+}
+section.downloads .sites {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  font-size: 2.3rem;
+  margin-bottom: 10vh;
+  position: relative;
+  left: 10vw;
+  gap: 7.5vw;
+}
+
+section.downloads .export {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  font-size: 2.3rem;
+  margin-bottom: 10vh;
+  position: relative;
+  left: 10vw;
+  gap: 7.5vw;
+}
+
+section.downloads .sites li,
+section.downloads .export li {
+  display: flex;
+  list-style: none;
+  justify-content: left;
+}
+
+section.downloads .sites li a,
+section.downloads .export li a {
+  text-decoration: none;
+  color: rgb(70, 70, 78);
+}
+
+section.downloads .sites li a:hover,
+section.downloads .export li a:hover {
+  text-decoration: underline;
+  color: rgb(62, 62, 180);
+}
+
+section.downloads form button {
+  font-size: 2.3rem;
+  background-color: inherit;
+  box-shadow: inherit;
+  border: inherit;
+  color: rgb(70, 70, 78);
+  cursor: pointer;
+  width: 100%;
+}
+
+section.downloads form button:hover {
+  text-decoration: underline;
+  color: rgb(62, 62, 180);
+}
+
+section.downloads .error_message {
+  font-size: 4rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+section.downloads .download_link {
+  font-size: 4rem;
+  text-align: center;
+}
+
+section.downloads .download_link a {
+  color: rgb(70, 70, 78);
+  text-decoration: none;
+}
+
+section.downloads .download_link a:hover {
+  text-decoration: underline;
+  color: rgb(62, 62, 180);
+}
