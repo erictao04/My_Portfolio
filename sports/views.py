@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import League, Team, Season
 import sys
-import pythoncom
 import os
 from pathlib import Path
 from send2trash import send2trash
@@ -65,7 +64,6 @@ def season(request, league_name, team_name, season_year):
             return render_link("xlsx")
 
         elif "pdf_script" in request.POST:
-            pythoncom.CoInitialize()
             if league.name == "NHL":
                 link = export_nhl("pdf")
             return render_link("pdf")
