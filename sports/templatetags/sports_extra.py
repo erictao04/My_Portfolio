@@ -134,16 +134,16 @@ def url_db_values(team, season):
 
 @register.simple_tag
 def clean_link(raw_link):
-    link_regex = re.compile(r'\\media.*\.(xlsx|csv|pdf|json|txt)')
-    return link_regex.search(raw_link).group(0)
+    link_regex = re.compile(r'(\\|/)media.*\.(xlsx|csv|pdf|json|txt)')
+    return link_regex.search(raw_link).group(1)
 
 
-@register.simple_tag
+@ register.simple_tag
 def lower(string):
     return string.lower()
 
 
-@register.simple_tag
+@ register.simple_tag
 def url_nba_values(team, season):
     values_dict = {
         'Atlanta-Hawks': 'hawks',
@@ -183,7 +183,7 @@ def url_nba_values(team, season):
     return f'{values_dict[team.name]}/stats?season={season_year}'
 
 
-@register.simple_tag
+@ register.simple_tag
 def url_espn_nba_values(team, season):
     values_dict = {
         'Atlanta-Hawks': 'atl',
@@ -221,7 +221,7 @@ def url_espn_nba_values(team, season):
     return f'{values_dict[team.name]}/season/{season_year}'
 
 
-@register.simple_tag
+@ register.simple_tag
 def url_bask_ref_values(team, season):
     values_dict = {
         'Atlanta-Hawks': 'ATL',
@@ -259,7 +259,7 @@ def url_bask_ref_values(team, season):
     return f"{values_dict[team.name]}/{season_year}"
 
 
-@register.simple_tag
+@ register.simple_tag
 def url_mlb_values(team, season):
     values_dict = {
         'Arizona-Diamondbacks': 'dbacks',
@@ -298,7 +298,7 @@ def url_mlb_values(team, season):
     return f"{values_dict[team.name]}/stats/{season_year}"
 
 
-@register.simple_tag
+@ register.simple_tag
 def url_espn_mlb_values(team, season):
     values_dict = {
         'Arizona-Diamondbacks': 'ari',
@@ -336,7 +336,7 @@ def url_espn_mlb_values(team, season):
     return f'{values_dict[team.name]}/season/{season_year}'
 
 
-@register.simple_tag
+@ register.simple_tag
 def url_base_ref_values(team, season):
     values_dict = {
         'Arizona-Diamondbacks': 'ARI',
@@ -374,7 +374,7 @@ def url_base_ref_values(team, season):
     return f"{values_dict[team.name]}/{season_year}"
 
 
-@register.simple_tag
+@ register.simple_tag
 def url_nfl_values(team, season):
     values_dict = {
         'Arizona-Cardinals': 'azcardinals',
@@ -415,7 +415,7 @@ def url_nfl_values(team, season):
     return f"{values_dict[team.name]}.com/team/stats/{season_year}/REG"
 
 
-@register.simple_tag
+@ register.simple_tag
 def url_espn_nfl_values(team, season):
     values_dict = {
         'Arizona-Cardinals': 'ari',
@@ -456,7 +456,7 @@ def url_espn_nfl_values(team, season):
     return f"{values_dict[team.name]}/season/{season_year}"
 
 
-@register.simple_tag
+@ register.simple_tag
 def url_foot_ref_values(team, season):
     values_dict = {
         'Arizona-Cardinals': 'crd',

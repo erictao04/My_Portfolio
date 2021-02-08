@@ -79,9 +79,8 @@
         <div class="coming-soon"> Downloading stats for the {{league.name}} is <u>coming soon!</u></div>
     {% endif %}
     {% if link %}
-        <p>{{ link }}</p>
-        
-        <div class="download_link"><a href="{{ link }}" target="_blank">Download</a></div>
+        {% clean_link link as cleaned_link %}
+        <div class="download_link"><a href="{{ cleaned_link }}" target="_blank">Download</a></div>
     {% endif %}
 </section>
 {% endblock %}
