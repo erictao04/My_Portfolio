@@ -1,0 +1,13 @@
+html {
+  font-size: 10px;
+}
+
+section.error-sites {
+  padding: 15vh 15vw 0 15vw;
+}
+
+section.error-sites .error-message {
+  font-size: 3rem;
+  color: rgb(70, 70, 78);
+  text-align: center;
+}

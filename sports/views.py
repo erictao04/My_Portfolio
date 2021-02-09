@@ -8,6 +8,16 @@ from .programs import NhlStats
 # Create your views here.
 
 
+def error_500(request):
+    leagues = League.objects.all()
+    return render(request, "404_500.html", context={'leagues': leagues})
+
+
+def error_404(request, exception):
+    leagues = League.objects.all()
+    return render(request, "404_500.html", context={'leagues': leagues})
+
+
 def index(request):
     leagues = League.objects.all()
     return render(request, "sports/index.html", context={"leagues": leagues})

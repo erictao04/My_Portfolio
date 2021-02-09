@@ -1,5 +1,5 @@
-from sports.programs import NhlStats
 from sports.models import Season, Team
+from sports.programs import NhlStats
 from django.core.management import call_command
 import django
 import sys
@@ -115,4 +115,4 @@ class NhlYears(NhlStats):
 
 
 if __name__ == "__main__":
-    update_league("NHL", update="all_seasons", start="jets")
+    NhlYears("ducks", '2019-2020').update_all_seasons()

@@ -1,0 +1,10 @@
+{% extends "sports/base.html" %}
+
+{% block content %}
+    <section class="error-sites">
+        <div class="error-message">Sorry, we couldn't find the league, team or season you were looking for. 
+            Please try to navigate our site one more time using the interface at your disposal. Thank you.
+            Return to the main page <a href="{% url 'index' %}">here</a>.
+        </div>
+    </section>
+{% endblock %}

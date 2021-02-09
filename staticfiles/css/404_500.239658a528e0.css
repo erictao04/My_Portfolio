@@ -1,0 +1,8 @@
+html {
+  font-size: 10px;
+}
+
+section.error-sites .error-message {
+  font-size: 2rem;
+  color: rgb(70, 70, 78);
+}

@@ -74,7 +74,8 @@ class NhlStats:
 
     def changed_name(self, team, season):
         lst_changed_names = [
-            ["Arizona-Coyotes", "2014-2015", "Phoenix-Coyotes"]
+            ["Arizona-Coyotes", "2014-2015", "Phoenix-Coyotes"],
+            ["Anaheim-Ducks", "2006-2007", "Mighty-Ducks-Of-Anaheim"]
         ]
         for (new_name, first_used, old_name) in lst_changed_names:
             if team == new_name and season < first_used:
@@ -202,9 +203,9 @@ class NhlStats:
                     csv_writer.writerow([cell.value for cell in row])
 
         elif self.export_type == "json":
-            json_file = {self.team: {}}
+            json_file = {self.team: {self.season: {}}}
             for row in range(2, stats_sheet.max_row+1):
-                json_file[self.team][stats_sheet[f'A{row}'].value] = {
+                json_file[self.team][self.season][stats_sheet[f'A{row}'].value] = {
                     "GP": stats_sheet[f'B{row}'].value,
                     "G": stats_sheet[f'C{row}'].value,
                     "A": stats_sheet[f'D{row}'].value,

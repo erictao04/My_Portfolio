@@ -44,7 +44,7 @@
             <li><form method="post">
                 {% csrf_token %}
                 <button type="submit" name="xlsx_script">
-                    {% if post_excel %}
+                    {% if post_xlsx %}
                         <i class="fa fa-check"></i>
                     {% endif %}
                     Excel</button>
@@ -76,7 +76,8 @@
             </form></li>
         </ul>
     {% else %}
-        <div class="coming-soon"> Downloading stats for the {{league.name}} is <u>coming soon!</u></div>
+        <div class="coming-soon"> {{league.name}} stats download are coming soon! Download NHL stats in the meantime 
+            <a href="{% url 'sports:league' 'nhl' %}">here!</a></div>
     {% endif %}
     {% if link %}
         {% clean_link link as cleaned_link %}

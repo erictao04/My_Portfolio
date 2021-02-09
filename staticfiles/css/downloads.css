@@ -86,7 +86,12 @@ section.downloads .download_link a {
   text-decoration: none;
 }
 
-section.downloads .download_link a:hover {
+section.downloads .coming-soon a {
+  color: rgb(70, 70, 78);
+}
+
+section.downloads .download_link a:hover,
+section.downloads .coming-soon a:hover {
   text-decoration: underline;
   color: rgb(62, 62, 180);
 }
