@@ -63,7 +63,7 @@ def season(request, league_name, team_name, season_year):
     season = Season.objects.get(year=season_year)
 
     if request.method == "GET":
-        # empty_media()
+        empty_media()
         return render(request, "sports/season.html", context={
             "league": league, "team": team, "season": season, "leagues": leagues
         })

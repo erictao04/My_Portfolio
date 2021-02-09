@@ -38,7 +38,7 @@ ALLOWED_HOSTS = ['shrouded-journey-18268.herokuapp.com', '127.0.0.1']
 
 INSTALLED_APPS = [
     'sports',
-    'My_Portfolio.core',
+    # 'My_Portfolio.core',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
