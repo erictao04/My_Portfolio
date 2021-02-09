@@ -1,4 +1,3 @@
-from sports.models import Season, Team
 from sports.programs import NhlStats
 from django.core.management import call_command
 import django
@@ -9,6 +8,7 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "My_Portfolio.settings")
 
 django.setup()
+from sports.models import Season, Team
 
 
 def update_seasons(team, season):
@@ -115,4 +115,4 @@ class NhlYears(NhlStats):
 
 
 if __name__ == "__main__":
-    NhlYears("ducks", '2019-2020').update_all_seasons()
+    NhlYears("canadiens", '2004-2005').update_one_season()
