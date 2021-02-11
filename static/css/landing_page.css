@@ -41,6 +41,7 @@ section .main .logos {
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   padding-inline-start: 0;
   justify-items: center;
+  align-items: center;
 }
 
 section .main .description {

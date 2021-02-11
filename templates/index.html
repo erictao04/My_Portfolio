@@ -13,10 +13,10 @@
         <section>
             <ul class="main">
                 <ul class="logos">
-                    <a href="{% url 'sports:league' 'nhl' %}"><img src="{% static 'img/nhl_logo.png' %}" height="100px"></a>
-                    <a href="{% url 'sports:league' 'nba' %}"><img src="{% static 'img/nba_logo.png' %}" height="100px"></a>
-                    <a href="{% url 'sports:league' 'mlb' %}"><img src="{% static 'img/mlb_logo.png' %}" height="100px"></a>
-                    <a href="{% url 'sports:league' 'nfl' %}"><img src="{% static 'img/nfl_logo.png' %}" height="100px"></a>
+                    <a href="{% url 'sports:league' 'nhl' %}"><img src="{% static 'img/nhl_logo.png' %}" alt="NHL Logo" height="90px"></a>
+                    <a href="{% url 'sports:league' 'nba' %}"><img src="{% static 'img/nba_logo.png' %}" alt="NBA Logo" height="100px"></a>
+                    <a href="{% url 'sports:league' 'mlb' %}"><img src="{% static 'img/mlb_logo.png' %}" alt="MLB Logo" width="110px"></a>
+                    <a href="{% url 'sports:league' 'nfl' %}"><img src="{% static 'img/nfl_logo.png' %}" alt="NFL Logo" height="90px"></a>
                 </ul>
                 <div class="description">Want the stats of your favourite teams? Download NHL, NBA, MLB and NFL stats in CSV, PDF, Excel or Json <a href="{% url 'sports:index' %}">here!</a></div>
             </ul>

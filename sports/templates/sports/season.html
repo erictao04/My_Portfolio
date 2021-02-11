@@ -1,5 +1,6 @@
 {% extends "sports/base.html" %}
 {% load sports_extra %}
+{% load static %}
 {% block content %}
 <section class="downloads">
     <div class="header">
@@ -8,72 +9,79 @@
     <ul class="sites">
         {% if league.name == "NHL" %}
             {% url_nhl_values team as url_nhl %}
-            <li><a href="https://www.nhl.com/{{ url_nhl }}/stats/{{ season.year }}" target="_blank">NHL.com</a></li>
+            <li><a href="https://www.nhl.com/{{ url_nhl }}/stats/{{ season.year }}" target="_blank"><img src="{% static 'img/nhlcom_logo.png' %}" height="55px"></a></li>
             {% url_db_values team season as url_db %}
-            <li><a href="https://www.hockeydb.com/ihdb/stats/leagues/seasons/teams/{{ url_db }}.html" target="_blank">Hockey DB.com</a></li>
+            <li><a href="https://www.hockeydb.com/ihdb/stats/leagues/seasons/teams/{{ url_db }}.html" target="_blank"><img src="{% static 'img/hockeydb_logo (1).png' %}" height="65px"></a></li>
             {% url_elitep_values team as url_elitep %}
-            <li><a href="https://www.eliteprospects.com/team/{{ url_elitep }}/{{ team.name }}/{{ season.year }}?tab=stats#players" target="_blank">Elite Prospect.com</a></li>
+            <li><a href="https://www.eliteprospects.com/team/{{ url_elitep }}/{{ team.name }}/{{ season.year }}?tab=stats#players" target="_blank"><img src="{% static 'img/eliteprospects_logo.png' %}" height="70px"></a></li>
         {% elif league.name == "NBA" %}
             {% url_nba_values team season as url_nba %}
-            <li><a href="https://www.nba.com/{{ url_nba }}&SeasonType=Regular%20Season" target="_blank">NBA.com</a></li>
+            <li><a href="https://www.nba.com/{{ url_nba }}&SeasonType=Regular%20Season" target="_blank"><img src="{% static 'img/nbacom_logo.png' %}" height="60px"></a></li>
             {% url_espn_nba_values team season as url_espn_nba %}
-            <li><a href="https://www.espn.com/nba/team/stats/_/name/{{ url_espn_nba }}/seasontype/2" target="_blank">ESPN.com</a></li>
+            <li><a href="https://www.espn.com/nba/team/stats/_/name/{{ url_espn_nba }}/seasontype/2" target="_blank"><img src="{% static 'img/espn_logo.png' %}" height="40px"></a></li>
             {% url_bask_ref_values team season as url_bask_ref %}
-            <li><a href="https://www.basketball-reference.com/teams/{{ url_bask_ref }}.html" target="_blank">Basketball Reference.com</a></li>
+            <li><a href="https://www.basketball-reference.com/teams/{{ url_bask_ref }}.html" target="_blank"><img src="{% static 'img/basketballreference_logo.png' %}" height="40px"></a></li>
         {% elif league.name == "MLB" %}
             {% url_mlb_values team season as url_mlb %}
-            <li><a href="https://www.mlb.com/{{ url_mlb }}" target="_blank">MLB.com</a></li>
+            <li><a href="https://www.mlb.com/{{ url_mlb }}" target="_blank"><img src="{% static 'img/mlbcom_logo.png' %}" height="55px"></a></li>
             {% url_espn_mlb_values team season as url_espn_mlb %}
-            <li><a href="https://www.espn.com/mlb/team/stats/_/name/{{ url_espn_mlb }}/seasontype/2" target="_blank">ESPN.com</a></li>
+            <li><a href="https://www.espn.com/mlb/team/stats/_/name/{{ url_espn_mlb }}/seasontype/2" target="_blank"><img src="{% static 'img/espn_logo.png' %}" height="37px"></a></li>
             {% url_base_ref_values team season as url_base_ref %}
-            <li><a href="https://www.baseball-reference.com/teams/{{ url_base_ref }}.shtml" target="_blank">Baseball Reference.com</a></li>
+            <li><a href="https://www.baseball-reference.com/teams/{{ url_base_ref }}.shtml" target="_blank"><img src="{% static 'img/baseballreference_logo.png' %}" height="40px"></a></li>
         {% elif league.name == "NFL" %}
             {% url_nfl_values team season as url_nfl %}
-            <li><a href="https://www.{{ url_nfl }}" target="_blank">NFL.com</a></li>
+            <li><a href="https://www.{{ url_nfl }}" target="_blank"><img src="{% static 'img/nflcom_logo.png' %}" height="50px"></a></li>
             {% url_espn_nfl_values team season as url_espn_nfl %}
-            <li><a href="https://www.espn.com/nfl/team/stats/_/name/{{ url_espn_nfl }}/seasontype/2" target="_blank">ESPN.com</a></li>
+            <li><a href="https://www.espn.com/nfl/team/stats/_/name/{{ url_espn_nfl }}/seasontype/2" target="_blank"><img src="{% static 'img/espn_logo.png' %}" height="40px"></a></li>
             {% url_foot_ref_values team season as url_foot_ref %}
-            <li><a href="https://www.pro-football-reference.com/teams/{{ url_foot_ref }}.htm" target="_blank">Pro Football Reference.com</a></li>
+            <li><a href="https://www.pro-football-reference.com/teams/{{ url_foot_ref }}.htm" target="_blank"><img src="{% static 'img/profootballreference.svg' %}" height="40px"></a></li>
         {% endif %}
     </ul>
     <div class="header">
-        Exports Stats (Format)
+        Exports Stats
     </div>
     {% if league.name == "NHL" %}
         <ul class="export">
-            <li><form method="post">
+            <li>
+                <form method="post">
                 {% csrf_token %}
                 <button type="submit" name="xlsx_script">
+                    <div class="image"><img src="{% static 'img/excel.png' %}" height="100px"></div>
                     {% if post_xlsx %}
                         <i class="fa fa-check"></i>
                     {% endif %}
-                    Excel</button>
-                    
+                    </button>
             </form></li>
             <li><form method="post">
                 {% csrf_token %}
                 <button type="submit" name="pdf_script">
+                    <div class="image"><img src="{% static 'img/pdf.svg' %}" height="100px"></div>
                     {% if post_pdf %}
                         <i class="fa fa-check"></i>
                     {% endif %}
-                    PDF</button>
-            </form></li>
+                    </button>
+            </form>
+            </li>
             <li><form method="post">
                 {% csrf_token %}
                 <button type="submit" name="csv_script">
+                    <div class="image"><img src="{% static 'img/csv.png' %}" height="100px"></div>
                     {% if post_csv %}
                         <i class="fa fa-check"></i>
                     {% endif %}
-                    CSV</button>
-            </form></li>
+                    </button>
+            </form>
+            </li>
             <li><form method="post">
                 {% csrf_token %}
                 <button type="submit" name="json_script">
+                    <div class="image"><img src="{% static 'img/json.png' %}" height="100px"></div>
                     {% if post_json %}
                         <i class="fa fa-check"></i>
                     {% endif %}
-                    JSON</button>
-            </form></li>
+                    </button>
+            </form>
+            </li>
         </ul>
     {% else %}
         <div class="coming-soon"> {{league.name}} stats download are coming soon! Download NHL stats in the meantime 

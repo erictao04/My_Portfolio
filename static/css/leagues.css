@@ -20,6 +20,7 @@ section.leagues ul .league {
   align-items: center;
   justify-items: center;
   text-align: center;
+  height: 100px;
 }
 
 section.leagues ul .league .message {
