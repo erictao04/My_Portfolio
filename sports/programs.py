@@ -10,6 +10,9 @@ from bs4 import BeautifulSoup
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 from pathlib import Path
+import pandas as pd
+from jinja2 import Environment, FileSystemLoader
+import pdfkit
 
 
 class NhlStats:
@@ -190,11 +193,30 @@ class NhlStats:
         if self.export_type == "xlsx":
             stats_wb.save(filepath)
 
-        elif self.export_type == "pdf":
-            error_file = open(get_path('txt'), 'w')
-            error_file.write("PDF COMING SOON")
-            error_file.close()
-            return str(get_path('txt'))
+        elif self.export_type == "pdf-html":
+            stats_wb.save(get_path("xlsx"))
+            pd_df = pd.read_excel(str(get_path("xlsx")))
+
+            env = Environment(loader=FileSystemLoader('.'))
+            template = env.get_template('templates/download_stats.html')
+            template_vars = {'stats_table': pd_df.to_html(
+                justify='center', index=False, border=0, bold_rows=False, escape=False)}
+            html_out = template.render(template_vars)
+
+            html_out = re.sub(
+                r'<table border="0" class="dataframe">',
+                r'<table border="0" class="dataframe" cellspacing="0">',
+                html_out
+            )
+            html_file = open(str(get_path("html")), 'w', encoding='utf8')
+            html_file.write(html_out)
+            html_file.close()
+
+            config = pdfkit.configuration(
+                wkhtmltopdf='C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
+
+            pdfkit.from_file(str(get_path("html")), str(get_path(
+                "pdf")), configuration=config, css=str(Path.cwd()/'static'/'css'/'download_stats.css'), options={'quiet': ''})
 
         elif self.export_type == "csv":
             with open(filepath, 'w') as csv_file:

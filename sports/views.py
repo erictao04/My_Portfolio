@@ -75,7 +75,7 @@ def season(request, league_name, team_name, season_year):
 
         elif "pdf_script" in request.POST:
             if league.name == "NHL":
-                link = export_nhl("pdf")
+                link = export_nhl("pdf-html")
             return render_link("pdf")
 
         elif "csv_script" in request.POST:
