@@ -50,6 +50,8 @@ def season(request, league_name, team_name, season_year):
 
     def empty_media():
         for file_folder in os.listdir(str(Path.cwd()/'media')):
+            if file_folder.endswith('.txt'):
+                continue
             send2trash(str(Path.cwd()/'media'/file_folder))
 
     def export_nhl(export_type):
