@@ -11,3 +11,4 @@ bs4==0.0.1
 pdfkit==0.6.1
 Jinja2==2.11.3
 pandas==1.2.2
+python-pdf==0.38

@@ -13,6 +13,7 @@ from pathlib import Path
 import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 import pdfkit
+import pydf
 
 
 class NhlStats:
@@ -208,15 +209,21 @@ class NhlStats:
                 r'<table border="0" class="dataframe" cellspacing="0">',
                 html_out
             )
-            html_file = open(str(get_path("html")), 'w', encoding='utf8')
-            html_file.write(html_out)
-            html_file.close()
 
-            config = pdfkit.configuration(
-                wkhtmltopdf='C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
+            try:
+                pdf = pydf.generate_pdf(html_out)
+                with open(str(get_path("html")), 'wb') as pdf_file:
+                    pdf_file.write(pdf)
+            except:
+                html_file = open(str(get_path("html")), 'w', encoding='utf8')
+                html_file.write(html_out)
+                html_file.close()
 
-            pdfkit.from_file(str(get_path("html")), str(get_path(
-                "pdf")), configuration=config, css=str(Path.cwd()/'static'/'css'/'download_stats.css'), options={'quiet': ''})
+                config = pdfkit.configuration(
+                    wkhtmltopdf='C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
+
+                pdfkit.from_file(str(get_path("html")), str(get_path(
+                    "pdf")), configuration=config, css=str(Path.cwd()/'static'/'css'/'download_stats.css'), options={'quiet': ''})
 
         elif self.export_type == "csv":
             with open(filepath, 'w') as csv_file:
