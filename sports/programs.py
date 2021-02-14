@@ -212,7 +212,7 @@ class NhlStats:
 
             try:
                 pdf = pydf.generate_pdf(html_out)
-                with open(str(get_path("html")), 'wb') as pdf_file:
+                with open(str(get_path("pdf")), 'wb') as pdf_file:
                     pdf_file.write(pdf)
             except:
                 html_file = open(str(get_path("html")), 'w', encoding='utf8')
