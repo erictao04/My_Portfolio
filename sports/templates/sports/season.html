@@ -89,7 +89,17 @@
     {% endif %}
     {% if link %}
         {% clean_link link as cleaned_link %}
-        <div class="download_link"><a href="{{ cleaned_link }}" target="_blank">Download</a></div>
+        <div class="download_link"><a href="{{ cleaned_link }}" target="_blank">Export 
+            {% if post_xlsx %}
+                XLSX Sheet
+            {% elif post_pdf_html %}
+                PDF File
+            {% elif post_csv %}
+                CSV File
+            {% elif post_json %}
+                JSON File
+            {% endif %}
+        </a></div>
     {% endif %}
 </section>
 {% endblock %}

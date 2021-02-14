@@ -194,7 +194,7 @@ class NhlStats:
         if self.export_type == "xlsx":
             stats_wb.save(filepath)
 
-        elif self.export_type == "pdf-html":
+        elif self.export_type == "pdf_html":
             stats_wb.save(get_path("xlsx"))
             pd_df = pd.read_excel(str(get_path("xlsx")))
 

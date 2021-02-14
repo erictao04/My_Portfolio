@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+    <style>html {
+                font-size: 10px;
+                }
+
+                table {
+                font-size: 2.25rem;
+                }
+
+                thead th:first-child {
+                width: 400px;
+                }
+
+                thead th:not(:first-child) {
+                width: 75px;
+                }
+
+                tbody tr {
+                height: 4.5rem;
+                vertical-align: middle;
+                }
+
+                tbody tr:nth-child(2n + 1) {
+                background-color: rgb(192, 187, 187);
+                }
+
+                tbody tr td {
+                text-align: center;
+                }</style></head>
+    <body>
+        <table border="0" class="dataframe" cellspacing="0">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Player</th>
+      <th>GP</th>
+      <th>G</th>
+      <th>A</th>
+      <th>P</th>
+      <th>PIM</th>
+      <th>+/-</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Teemu Selänne (RW)</td>
+      <td>78</td>
+      <td>51</td>
+      <td>58</td>
+      <td>109</td>
+      <td>34</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>Paul Kariya (LW)</td>
+      <td>69</td>
+      <td>44</td>
+      <td>55</td>
+      <td>99</td>
+      <td>6</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <td>Steve Rucchin (C)</td>
+      <td>79</td>
+      <td>19</td>
+      <td>48</td>
+      <td>67</td>
+      <td>24</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td>Dmitri Mironov (D)</td>
+      <td>62</td>
+      <td>12</td>
+      <td>34</td>
+      <td>46</td>
+      <td>77</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>Jari Kurri (RW)</td>
+      <td>82</td>
+      <td>13</td>
+      <td>22</td>
+      <td>35</td>
+      <td>12</td>
+      <td>-13</td>
+    </tr>
+    <tr>
+      <td>Kevin Todd (C)</td>
+      <td>65</td>
+      <td>9</td>
+      <td>21</td>
+      <td>30</td>
+      <td>44</td>
+      <td>-7</td>
+    </tr>
+    <tr>
+      <td>Joe Sacco (RW)</td>
+      <td>77</td>
+      <td>12</td>
+      <td>17</td>
+      <td>29</td>
+      <td>35</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Brian Bellows (RW)</td>
+      <td>62</td>
+      <td>15</td>
+      <td>13</td>
+      <td>28</td>
+      <td>22</td>
+      <td>-11</td>
+    </tr>
+    <tr>
+      <td>Darren Van Impe (D)</td>
+      <td>74</td>
+      <td>4</td>
+      <td>19</td>
+      <td>23</td>
+      <td>90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Jean-François Jomphe (C)</td>
+      <td>64</td>
+      <td>7</td>
+      <td>14</td>
+      <td>21</td>
+      <td>53</td>
+      <td>-9</td>
+    </tr>
+    <tr>
+      <td>Ted Drury (C)</td>
+      <td>73</td>
+      <td>9</td>
+      <td>9</td>
+      <td>18</td>
+      <td>54</td>
+      <td>-9</td>
+    </tr>
+    <tr>
+      <td>Bobby Dollas (D)</td>
+      <td>79</td>
+      <td>4</td>
+      <td>14</td>
+      <td>18</td>
+      <td>55</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>Warren Rychel (LW)</td>
+      <td>70</td>
+      <td>10</td>
+      <td>7</td>
+      <td>17</td>
+      <td>218</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Sean Pronger (C)</td>
+      <td>39</td>
+      <td>7</td>
+      <td>7</td>
+      <td>14</td>
+      <td>20</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Garry Valk (LW/RW)</td>
+      <td>53</td>
+      <td>7</td>
+      <td>7</td>
+      <td>14</td>
+      <td>53</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <td>Roman Oksiuta (RW)</td>
+      <td>28</td>
+      <td>6</td>
+      <td>7</td>
+      <td>13</td>
+      <td>22</td>
+      <td>-12</td>
+    </tr>
+    <tr>
+      <td>Dave Karpa (D)</td>
+      <td>69</td>
+      <td>2</td>
+      <td>11</td>
+      <td>13</td>
+      <td>210</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Jean-Jacques Daigneault (D)</td>
+      <td>13</td>
+      <td>2</td>
+      <td>9</td>
+      <td>11</td>
+      <td>2</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Fredrik Olausson (D)</td>
+      <td>20</td>
+      <td>2</td>
+      <td>9</td>
+      <td>11</td>
+      <td>8</td>
+      <td>-5</td>
+    </tr>
+    <tr>
+      <td>Ken Baumgartner (LW/D)</td>
+      <td>67</td>
+      <td>0</td>
+      <td>11</td>
+      <td>11</td>
+      <td>182</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Jason Marshall (D)</td>
+      <td>73</td>
+      <td>1</td>
+      <td>9</td>
+      <td>10</td>
+      <td>140</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Alex Hicks (LW)</td>
+      <td>18</td>
+      <td>2</td>
+      <td>6</td>
+      <td>8</td>
+      <td>14</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Dan Trebil (D)</td>
+      <td>29</td>
+      <td>3</td>
+      <td>3</td>
+      <td>6</td>
+      <td>23</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Mike Leclerc (LW)</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Richard Park (RW/C)</td>
+      <td>11</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Mark Janssens (C)</td>
+      <td>12</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>47</td>
+      <td>-3</td>
+    </tr>
+    <tr>
+      <td>Valeri Karpov (RW)</td>
+      <td>9</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>16</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <td>Peter LeBoutillier (RW)</td>
+      <td>23</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>121</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Nikolai Tsulygin (D)</td>
+      <td>22</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>-5</td>
+    </tr>
+    <tr>
+      <td>Ruslan Salei (D)</td>
+      <td>30</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>37</td>
+      <td>-8</td>
+    </tr>
+    <tr>
+      <td>Igor Nikulin (RW)</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Shawn Antoski (LW)</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Barry Nieckar (LW)</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Frank Banham (RW)</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <td>Craig Reichert (RW)</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <td>Jeremy Stevenson (LW)</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>14</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>Adrien Plavsic (D)</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>-5</td>
+    </tr>
+  </tbody>
+</table>
+    </body>
+</html>
