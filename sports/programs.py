@@ -205,6 +205,39 @@ class NhlStats:
             html_out = template.render(template_vars)
 
             html_out = re.sub(
+                r'</head>',
+                r'''<style>html {
+                font-size: 10px;
+                }
+
+                table {
+                font-size: 2.25rem;
+                }
+
+                thead th:first-child {
+                width: 400px;
+                }
+
+                thead th:not(:first-child) {
+                width: 75px;
+                }
+
+                tbody tr {
+                height: 4.5rem;
+                vertical-align: middle;
+                }
+
+                tbody tr:nth-child(2n + 1) {
+                background-color: rgb(192, 187, 187);
+                }
+
+                tbody tr td {
+                text-align: center;
+                }</style></head>''',
+                html_out
+            )
+
+            html_out = re.sub(
                 r'<table border="0" class="dataframe">',
                 r'<table border="0" class="dataframe" cellspacing="0">',
                 html_out
@@ -223,7 +256,7 @@ class NhlStats:
                     wkhtmltopdf='C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
 
                 pdfkit.from_file(str(get_path("html")), str(get_path(
-                    "pdf")), configuration=config, css=str(Path.cwd()/'static'/'css'/'download_stats.css'), options={'quiet': ''})
+                    "pdf")), configuration=config, options={'quiet': ''})
 
         elif self.export_type == "csv":
             with open(filepath, 'w') as csv_file:
