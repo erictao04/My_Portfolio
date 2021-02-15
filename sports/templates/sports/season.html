@@ -56,7 +56,7 @@
                 {% csrf_token %}
                 <button type="submit" name="pdf_script">
                     <div class="image"><img src="{% static 'img/pdf.svg' %}" height="100px"></div>
-                    {% if post_pdf %}
+                    {% if post_pdf_html %}
                         <i class="fa fa-check"></i>
                     {% endif %}
                     </button>
