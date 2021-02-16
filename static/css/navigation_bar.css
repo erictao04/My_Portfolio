@@ -36,14 +36,23 @@ nav.main ul.home-btns li.home-btn {
 }
 
 nav.main p.current-site {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 0 1.5vw;
 }
+
+nav.main p.current-site img {
+  height: 6vh;
+}
+
 nav.main p.current-site a {
   text-decoration: none;
   color: white;
   font-size: 3rem;
   text-decoration: underline;
   text-decoration-thickness: 1px;
+  text-align: right;
 }
 nav.main ul.leagues-btn {
   display: flex;
