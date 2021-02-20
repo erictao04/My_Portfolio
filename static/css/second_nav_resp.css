@@ -1,0 +1,6 @@
+@media (max-width: 750px) {
+  nav.leagues .grid {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
