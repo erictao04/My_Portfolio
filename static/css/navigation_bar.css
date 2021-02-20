@@ -12,6 +12,7 @@ nav.main {
   background-color: rgb(22, 17, 78);
   height: 10vh;
   align-items: center;
+  position: sticky;
 }
 
 nav.main ul.home-btns {
@@ -44,7 +45,6 @@ nav.main p.current-site {
 nav.main p.current-site img {
   height: 6vh;
   vertical-align: middle;
-  margin-left: 1vw;
 }
 
 nav.main p.current-site a {
@@ -55,6 +55,19 @@ nav.main p.current-site a {
   text-decoration-thickness: 1px;
   vertical-align: middle;
 }
+nav.main .checkbtn {
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  text-align: right;
+  padding-right: 5vw;
+  display: none;
+}
+
+nav.main #check {
+  display: none;
+}
+
 nav.main ul.leagues-btn {
   display: flex;
   justify-content: space-around;
