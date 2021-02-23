@@ -69,6 +69,7 @@
   nav.main #check:checked ~ ul.leagues-btn {
     right: 0;
     position: absolute;
+    top: 10vh;
   }
 
   nav.main .side-check:checked ~ .sidedrop {
