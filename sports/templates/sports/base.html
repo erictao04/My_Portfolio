@@ -19,12 +19,16 @@
         <link rel="stylesheet" href="{% static 'css/seasons.css' %}">
         <link rel="stylesheet" href="{% static 'css/leagues.css' %}">
         <link rel="stylesheet" href="{% static 'css/404_500.css' %}">
+        <link rel="stylesheet" href="{% static 'css/navigation_bar_resp.css' %}">
+        <link rel="stylesheet" href="{% static 'css/second_nav_resp.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/6f3d5e0865.js" crossorigin="anonymous"></script>
+
     </head>
     <body>
         <nav class="main">
             <ul class="home-btns">
-                <li class="home-btn"><a href="{% url 'index' %}">Home</a></h1>
+                <li class="home-btn"><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'sports:index' %}">Download Sports Stats</a></li>
             </ul>
 
@@ -34,20 +38,46 @@
                 {% lower team.name as lower_team %}
                 {% if season %}
                     <a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}&nbsp;{{ season.year }}</a>
+                    <a href="{% url 'sports:team' lower_league lower_team %}"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a>
                 {% elif team %}
                     <a href="{% url 'sports:league' lower_league %}">{% clean_name team %}</a>
+                    <a href="{% url 'sports:league' lower_league %}"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a>
                 {% elif league %}
                     <a href="{% url 'sports:index' %}">{{ league.name }}&nbsp;Teams</a> 
+                    <a href="{% url 'sports:index' %}"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a> 
                 {% else %}
                     <a href="{% url 'index' %}">Leagues</a>
+                    <a href="{% url 'index' %}"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a>
                 {% endif %}
-                <img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px">
+                
             </p>
 
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars"></i>
+            </label>
+
             <ul class="leagues-btn">
+                <li><a href="{% url 'sports:index' %}">Download Sports Stats</a></li>
+                
                 {% for league in leagues %}
                     {% lower league.name as lower_league %}
-                    <li><a href="{% url 'sports:league'  lower_league %}">{{ league.name }}</a></li>
+                    <li class="mobile-menu">
+                        <a href="{% url 'sports:league'  lower_league %}">{{ league.name }}</a>
+                        
+                        <label class="side-checkbtn">
+                            <input type="checkbox"  class="side-check">
+                            <i class="fas fa-angle-right"></i>
+                            <ul class="sidedrop">
+                                {% league_teams league as teams %}
+                                {% for team in teams %}
+                                    {% lower team.name as lower_team %}
+                                    <li><a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </label>
+                        
+                    </li>
                 {% endfor %}
             </ul>
         </nav>
