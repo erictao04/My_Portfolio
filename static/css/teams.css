@@ -49,3 +49,10 @@ section.teams ul a:active {
     font-size: 2.5rem;
   }
 }
+
+@media (max-height: 500px) {
+  section.teams ul {
+    padding: 8vh 7vw 0 7vw;
+    gap: 10vh 0vw;
+  }
+}

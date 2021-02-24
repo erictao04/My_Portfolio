@@ -76,3 +76,28 @@
     padding: 2vh 0 2vh 5vw;
   }
 }
+
+@media (max-height: 500px) {
+  nav.main {
+    height: 15vh;
+  }
+}
+
+@media (max-height: 300px) {
+  nav.main {
+    height: 20vh;
+  }
+  nav.main p.current-site img {
+    height: 35px;
+  }
+}
+@media (max-height: 230px) {
+  nav.main {
+    height: 30vh;
+  }
+}
+@media (max-height: 160px) {
+  nav.main {
+    height: 40vh;
+  }
+}

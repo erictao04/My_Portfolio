@@ -73,3 +73,15 @@ section .main .description a:hover {
     font-size: 2rem;
   }
 }
+
+@media (max-height: 500px) {
+  header ul {
+    height: 15vh;
+  }
+}
+
+@media (max-height: 300px) {
+  header ul {
+    height: 20vh;
+  }
+}
