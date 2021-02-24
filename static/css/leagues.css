@@ -4,9 +4,9 @@ html {
 
 section.leagues ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   padding: 0 10vw 0 10vw;
-  font-size: 2rem;
+  font-size: 1.8rem;
   gap: 7vh 3vw;
   margin-top: 7.5vh;
   align-items: center;
@@ -16,7 +16,7 @@ section.leagues ul .league {
   border: 2px solid rgb(154, 154, 212);
   border-radius: 1rem;
   display: grid;
-  grid-template-columns: 165px 1fr;
+  grid-template-columns: 145px 1fr;
   align-items: center;
   justify-items: center;
   text-align: center;
@@ -25,4 +25,10 @@ section.leagues ul .league {
 
 section.leagues ul .league .message {
   padding: 0 1.5vw 0 1.5vw;
+}
+
+@media (max-width: 750px) {
+  section.leagues ul {
+    font-size: 2.5rem;
+  }
 }
