@@ -29,6 +29,6 @@ section.leagues ul .league .message {
 
 @media (max-width: 750px) {
   section.leagues ul {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }

@@ -63,3 +63,13 @@ section .main .description a {
 section .main .description a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 750px) {
+  section .main {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}
