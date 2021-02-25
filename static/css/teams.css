@@ -50,6 +50,15 @@ section.teams ul a:active {
   }
 }
 
+@media (max-width: 300px) {
+  section.teams ul {
+    grid-template-columns: 1fr;
+  }
+  section.teams ul li a {
+    font-size: 1.25rem;
+  }
+}
+
 @media (max-height: 500px) {
   section.teams ul {
     padding: 8vh 7vw 0 7vw;

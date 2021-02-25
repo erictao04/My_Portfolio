@@ -1,6 +1,6 @@
 @media (max-width: 750px) {
   nav.main {
-    grid-template-columns: 125px 1fr 125px;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     height: 10vh;
   }
@@ -75,42 +75,67 @@
   nav.main .side-check:checked ~ .sidedrop li {
     padding: 2vh 0 2vh 5vw;
   }
+  @media (max-height: 500px) {
+    nav.main {
+      height: 15vh;
+    }
+
+    nav.main ul.leagues-btn {
+      top: 15vh;
+    }
+  }
+
+  @media (max-height: 300px) {
+    nav.main {
+      height: 20vh;
+    }
+    nav.main p.current-site img {
+      height: 35px;
+    }
+    nav.main ul.leagues-btn {
+      top: 20vh;
+    }
+  }
+  @media (max-height: 230px) {
+    nav.main {
+      height: 30vh;
+    }
+    nav.main ul.leagues-btn {
+      top: 30vh;
+    }
+  }
+  @media (max-height: 160px) {
+    nav.main {
+      height: 40vh;
+    }
+    nav.main ul.leagues-btn {
+      top: 40vh;
+    }
+  }
 }
 
-@media (max-height: 500px) {
-  nav.main {
-    height: 15vh;
+@media (min-width: 750px) {
+  @media (max-height: 675px) {
+    nav.main {
+      height: 15vh;
+    }
   }
 
-  nav.main ul.leagues-btn {
-    top: 15vh;
+  @media (max-height: 450px) {
+    nav.main {
+      height: 20vh;
+    }
   }
-}
 
-@media (max-height: 300px) {
-  nav.main {
-    height: 20vh;
+  @media (max-height: 350px) {
+    nav.main {
+      height: 25vh;
+    }
   }
-  nav.main p.current-site img {
-    height: 35px;
-  }
-  nav.main ul.leagues-btn {
-    top: 20vh;
-  }
-}
-@media (max-height: 230px) {
-  nav.main {
-    height: 30vh;
-  }
-  nav.main ul.leagues-btn {
-    top: 30vh;
-  }
-}
-@media (max-height: 160px) {
-  nav.main {
-    height: 40vh;
-  }
-  nav.main ul.leagues-btn {
-    top: 40vh;
+
+  @media (max-height: 275px) {
+    nav.main {
+      height: 30vh;
+    }
   }
 }

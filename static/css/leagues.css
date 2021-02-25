@@ -29,6 +29,26 @@ section.leagues ul .league .message {
 
 @media (max-width: 750px) {
   section.leagues ul {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  section.leagues ul .league {
+    grid-template-columns: 65px 1fr;
+  }
+
+  section.leagues ul .league:nth-child(1) img {
+    height: 60px;
+  }
+
+  section.leagues ul .league:nth-child(2) img {
+    height: 80px;
+  }
+
+  section.leagues ul .league:nth-child(3) img {
+    width: 60px;
+  }
+  section.leagues ul .league:nth-child(4) img {
+    height: 60px;
   }
 }
