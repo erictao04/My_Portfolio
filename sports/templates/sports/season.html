@@ -3,6 +3,11 @@
 {% load static %}
 {% block content %}
 <section class="downloads">
+    <div class="current-site">
+        {% lower league.name as lower_league %}
+        {% lower team.name as lower_team %}
+        {% clean_name team %}&nbsp;{{ season.year }}
+    </div>
     <div class="header">
         View Stats Insite
     </div>

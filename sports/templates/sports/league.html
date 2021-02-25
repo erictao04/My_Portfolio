@@ -2,6 +2,11 @@
 {% load sports_extra %}
 {% block content %}
 <section class="teams">
+    <div class="current-site">
+        {% lower league.name as lower_league %}
+
+        {{league.name}}
+    </div>
     <ul>
         {% lower league.name as lower_league %}
         {% for team in teams %}

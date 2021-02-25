@@ -3,6 +3,12 @@
 {% block content %}
 
 <section class="seasons">
+    <div class="current-site">
+        {% lower league.name as lower_league %}
+        {% lower team.name as lower_team %}
+
+        {% clean_name team %}
+    </div>
     <ul>
         {% lower league.name as lower_league %}
         {% lower team.name as lower_team %}

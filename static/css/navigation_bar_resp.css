@@ -1,4 +1,10 @@
-@media (max-width: 750px) {
+@media (max-width: 1250px) {
+  nav.main p.current-site a {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1000px) {
   nav.main {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;

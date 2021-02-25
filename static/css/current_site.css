@@ -1,0 +1,13 @@
+div.current-site {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 3vh;
+  text-decoration: underline;
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  div.current-site {
+    display: block;
+  }
+}
