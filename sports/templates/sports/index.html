@@ -3,6 +3,9 @@
 {% load static %}
 {% block content %}
 <section class="leagues">
+    <div class="current-site">
+        <a href="{% url 'index' %}">Leagues</a>
+    </div>
     <ul>
         <div class="league">
             <a href="{% url 'sports:league' 'nhl' %}"><img src="{% static 'img/nhl_logo.png' %}" alt="NHL Logo" height="90px"></a>

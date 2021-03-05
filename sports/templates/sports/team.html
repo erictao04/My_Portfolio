@@ -7,7 +7,7 @@
         {% lower league.name as lower_league %}
         {% lower team.name as lower_team %}
 
-        {% clean_name team %}
+        <a href="{% url 'sports:league' lower_league %}">{% clean_name team %}</a>
     </div>
     <ul>
         {% lower league.name as lower_league %}

@@ -5,7 +5,7 @@
     <div class="current-site">
         {% lower league.name as lower_league %}
 
-        {{league.name}}
+        <a href="{% url 'sports:index' %}">{{ league.name }}&nbsp;Teams</a>
     </div>
     <ul>
         {% lower league.name as lower_league %}

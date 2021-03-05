@@ -6,6 +6,10 @@ div.current-site {
   display: none;
 }
 
+section .current-site a {
+  color: black;
+}
+
 @media (max-width: 1000px) {
   div.current-site {
     display: block;
