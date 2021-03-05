@@ -19,22 +19,36 @@ def error_404(request, exception):
 
 
 def index(request):
-    leagues = League.objects.all()
+    # leagues = League.objects.all()
+    leagues = League.objects.raw("SELECT id, name FROM sports_league")
     return render(request, "sports/index.html", context={"leagues": leagues})
 
 
 def league(request, league_name):
-    leagues = League.objects.all()
-    league = League.objects.get(name=league_name.upper())
-    teams = Team.objects.filter(league=league).order_by('name')
+    # leagues = League.objects.all()
+    leagues = League.objects.raw("SELECT id, name FROM sports_league")
+    # league = League.objects.get(name=league_name.upper())
+    league = League.objects.raw(
+        "SELECT * FROM sports_league WHERE name = %s", [league_name.upper()])[0]
+    # teams = Team.objects.filter(league=league).order_by('name')
+    teams = Team.objects.raw(
+        "SELECT * FROM sports_team WHERE league_id = %s", [league.id])
+    # return render(request, "sports/league.html", context={"league": league, "teams": teams, "leagues": leagues})
     return render(request, "sports/league.html", context={"league": league, "teams": teams, "leagues": leagues})
 
 
 def team(request, league_name, team_name):
-    leagues = League.objects.all()
-    league = League.objects.get(name=league_name.upper())
-    team = Team.objects.get(name=team_name.title())
-    seasons = Season.objects.filter(team__name=team).order_by('-year')
+    # leagues = League.objects.all()
+    leagues = League.objects.raw("SELECT id, name FROM sports_league")
+    # league = League.objects.get(name=league_name.upper())
+    league = League.objects.raw(
+        "SELECT * FROM sports_league WHERE name = %s", [league_name.upper()])[0]
+    # team = Team.objects.get(name=team_name.title())
+    team = Team.objects.raw(
+        "SELECT * FROM sports_team WHERE name = %s", [team_name.title()])[0]
+    # seasons = Season.objects.filter(team__name=team).order_by('-year')
+    seasons = Season.objects.raw(
+        "SELECT * FROM sports_season JOIN sports_season_team ON season_id = sports_season.id WHERE team_id = %s ORDER BY year DESC", [team.id])
     return render(request, "sports/team.html", context={
         "league": league, "team": team, "seasons": seasons,
         "leagues": leagues
@@ -59,10 +73,17 @@ def season(request, league_name, team_name, season_year):
             team.name, season.year, folder=str(Path.cwd()/"media"), titled_folder=False, export_type=export_type).download()
         return nhl_obj
 
-    leagues = League.objects.all()
-    league = League.objects.get(name=league_name.upper())
-    team = Team.objects.get(name=team_name.title())
-    season = Season.objects.get(year=season_year)
+    # leagues = League.objects.all()
+    leagues = League.objects.raw("SELECT id, name FROM sports_league")
+    # league = League.objects.get(name=league_name.upper())
+    league = League.objects.raw(
+        "SELECT * FROM sports_league WHERE name = %s", [league_name.upper()])[0]
+    # team = Team.objects.get(name=team_name.title())
+    team = Team.objects.raw(
+        "SELECT * FROM sports_team WHERE name = %s", [team_name.title()])[0]
+    # season = Season.objects.get(year=season_year)
+    season = Season.objects.raw(
+        "SELECT * FROM sports_season WHERE year = %s", [season_year])[0]
 
     if request.method == "GET":
         empty_media()
