@@ -37,23 +37,10 @@ section.downloads .export {
   align-items: center;
 }
 
-section.downloads .sites li,
-section.downloads .export li {
+section.downloads :is(.sites, .export) li {
   display: flex;
   list-style: none;
   justify-content: left;
-}
-
-section.downloads .sites li a,
-section.downloads .export li a {
-  text-decoration: none;
-  color: rgb(70, 70, 78);
-}
-
-section.downloads .sites li a:hover,
-section.downloads .export li a:hover {
-  text-decoration: underline;
-  color: rgb(62, 62, 180);
 }
 
 section.downloads form button {
@@ -67,8 +54,10 @@ section.downloads form button {
 }
 
 section.downloads form button:hover {
-  text-decoration: underline;
   color: rgb(62, 62, 180);
+}
+section.downloads form button:focus {
+  outline: none;
 }
 
 section.downloads .error_message {
@@ -92,8 +81,7 @@ section.downloads .coming-soon a {
   color: rgb(70, 70, 78);
 }
 
-section.downloads .download_link a:hover,
-section.downloads .coming-soon a:hover {
+section.downloads :is(.download_link, .coming-soon) a:hover {
   text-decoration: none;
   color: rgb(62, 62, 180);
 }
@@ -101,6 +89,14 @@ section.downloads .coming-soon a:hover {
 section.downloads .coming-soon {
   padding-left: 10.5vw;
   font-size: 2.3rem;
+}
+
+section.downloads .export button i {
+  display: none;
+}
+
+section.downloads .export button i:nth-child(3) {
+  display: block;
 }
 
 @media (max-width: 850px) {
