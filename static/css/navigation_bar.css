@@ -69,6 +69,7 @@ nav.main .checkbtn {
 
 nav.main #check {
   display: none;
+  background-color: rgb(22, 17, 78);
 }
 
 nav.main ul.leagues-btn {
