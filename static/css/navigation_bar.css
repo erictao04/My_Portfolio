@@ -6,13 +6,17 @@ body {
   margin: 0;
 }
 
+header {
+  position: sticky;
+  top: 0;
+}
+
 nav.main {
   display: grid;
   grid-template-columns: 275px 1fr 300px;
   background-color: rgb(22, 17, 78);
   height: 10vh;
   align-items: center;
-  position: sticky;
 }
 
 nav.main ul.home-btns {

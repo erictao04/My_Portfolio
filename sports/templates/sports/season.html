@@ -15,11 +15,11 @@
     <ul class="sites">
         {% if league.name == "NHL" %}
             {% url_nhl_values team as url_nhl %}
-            <li><a href="https://www.nhl.com/{{ url_nhl }}/stats/{{ season.year }}" target="_blank"><img src="{% static 'img/nhlcom_logo.png' %}" height="55px"></a></li>
+            <li><a href="https://www.nhl.com/{{ url_nhl }}/stats/{{ season.year }}" target="_blank"><img src="{% static 'img/nhlcom_logo.png' %}" height="55px" alt="NHL logo"></a></li>
             {% url_db_values team season as url_db %}
-            <li><a href="https://www.hockeydb.com/ihdb/stats/leagues/seasons/teams/{{ url_db }}.html" target="_blank"><img src="{% static 'img/hockeydb_logo (1).png' %}" height="65px"></a></li>
+            <li><a href="https://www.hockeydb.com/ihdb/stats/leagues/seasons/teams/{{ url_db }}.html" target="_blank"><img src="{% static 'img/hockeydb_logo (1).png' %}" height="65px" alt="hockeydb logo"></a></li>
             {% url_elitep_values team as url_elitep %}
-            <li><a href="https://www.eliteprospects.com/team/{{ url_elitep }}/{{ team.name }}/{{ season.year }}?tab=stats#players" target="_blank"><img src="{% static 'img/eliteprospects_logo.png' %}" height="70px"></a></li>
+            <li><a href="https://www.eliteprospects.com/team/{{ url_elitep }}/{{ team.name }}/{{ season.year }}?tab=stats#players" target="_blank"><img src="{% static 'img/eliteprospects_logo.png' %}" height="70px" alt="eliteprospect logo"></a></li>
         {% elif league.name == "NBA" %}
             {% url_nba_values team season as url_nba %}
             <li><a href="https://www.nba.com/{{ url_nba }}&SeasonType=Regular%20Season" target="_blank"><img src="{% static 'img/nbacom_logo.png' %}" height="60px"></a></li>

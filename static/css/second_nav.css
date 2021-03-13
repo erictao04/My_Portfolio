@@ -15,6 +15,8 @@ nav.leagues .grid {
   margin: 0;
   padding: 0 10vw 0 10vw;
   background-color: rgb(154, 154, 212);
+  position: sticky;
+  top: 0;
 }
 nav.leagues .grid > li {
   text-align: center;
