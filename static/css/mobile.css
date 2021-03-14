@@ -1,14 +1,4 @@
-a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent; /* For some Androids */
-}
-
-.checkbtn {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent; /* For some Androids */
-}
-
-.side-checkbtn {
+:is(a, .checkbtn, .side-checkbtn) {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent; /* For some Androids */
 }

@@ -32,7 +32,7 @@ def league(request, league_name):
         "SELECT * FROM sports_league WHERE name = %s", [league_name.upper()])[0]
     # teams = Team.objects.filter(league=league).order_by('name')
     teams = Team.objects.raw(
-        "SELECT * FROM sports_team WHERE league_id = %s", [league.id])
+        "SELECT * FROM sports_team WHERE league_id = %s ORDER BY name", [league.id])
     # return render(request, "sports/league.html", context={"league": league, "teams": teams, "leagues": leagues})
     return render(request, "sports/league.html", context={"league": league, "teams": teams, "leagues": leagues})
 
