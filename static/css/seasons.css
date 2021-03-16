@@ -25,10 +25,10 @@ section.seasons ul li {
 section.seasons ul a {
   text-decoration: none;
   font-size: 2rem;
-  color: rgb(70, 70, 78);
+  color: black;
 }
 section.seasons ul a:hover {
-  color: rgb(62, 62, 180);
+  color: #104C91;
   text-decoration: underline;
   transition: 0.5s;
 }

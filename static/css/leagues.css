@@ -14,6 +14,7 @@ section.leagues ul {
 
 section.leagues ul .league {
   border: 2px solid rgb(154, 154, 212);
+  border: 2px solid #104C91;
   border-radius: 1rem;
   display: grid;
   grid-template-columns: 145px 1fr;

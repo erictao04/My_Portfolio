@@ -73,12 +73,12 @@ section.downloads .download_link {
 }
 
 section.downloads .download_link a {
-  color: rgb(70, 70, 78);
+  color: black;
   text-decoration: underline;
 }
 
 section.downloads .coming-soon a {
-  color: rgb(70, 70, 78);
+  color: black;
 }
 
 section.downloads :is(.download_link, .coming-soon) a:hover {

@@ -41,7 +41,7 @@
     text-align: left;
     grid-column: 1/4;
     grid: 2;
-    background-color: rgb(154, 154, 212);
+    background-color: #1F8AC0;
     z-index: -1;
     top: 10vh;
     height: 90vh;
@@ -55,7 +55,7 @@
     padding: 3vh 0 3vh 7vw;
     display: grid;
     grid-template-columns: 65px 1fr;
-    background-color: rgb(154, 154, 212);
+    background-color: #1F8AC0;
   }
 
   nav.main ul.leagues-btn .mobile-menu label {

@@ -5,7 +5,7 @@ html {
 body {
   background-color: rgb(233, 239, 245);
   overflow-x: hidden;
-  color: rgb(70, 70, 78);
+  color: black;
 }
 
 nav.leagues .grid {
@@ -14,7 +14,7 @@ nav.leagues .grid {
   list-style: none;
   margin: 0;
   padding: 0 10vw 0 10vw;
-  background-color: rgb(154, 154, 212);
+  background-color: #1F8AC0;
   position: sticky;
   top: 0;
 }
@@ -32,12 +32,12 @@ nav.leagues .grid > li > a {
 }
 
 nav.leagues .grid > li:hover {
-  background-color: rgb(187, 184, 216);
+  background-color: #104C91;
   transition: 0.3s;
 }
 
 nav.leagues .grid > li:hover a {
-  color: rgb(62, 62, 180);
+  color: #EFC9AF;
 }
 
 nav.leagues .dropdown {
@@ -52,9 +52,11 @@ nav.leagues .dropdown {
   visibility: hidden;
   font-size: 2rem;
   background-color: rgb(233, 239, 245);
-  border-bottom: 2px solid rgb(154, 154, 212);
-  border-left: 2px solid rgb(154, 154, 212);
-  border-right: 2px solid rgb(154, 154, 212);
+
+  border-bottom: 2px solid #1F8AC0;
+  border-left: 2px solid #1F8AC0;
+  border-right: 2px solid #1F8AC0;
+
   border-radius: 0 0 3rem 3rem;
 }
 
@@ -73,11 +75,11 @@ nav.leagues .grid > li .dropdown li {
 
 nav.leagues .grid > li .dropdown li a {
   text-decoration: none;
-  color: rgb(70, 70, 78);
+  color: black;
 }
 
 nav.leagues .grid > li .dropdown li a:hover {
-  color: rgb(62, 62, 180);
+  color: #104C91;
   text-decoration: underline;
   transition: 0.3s;
 }

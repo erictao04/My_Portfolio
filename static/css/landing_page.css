@@ -7,9 +7,9 @@ body {
   background-color: rgb(233, 239, 245);
 }
 
-header ul {
+.header-index ul {
   text-align: center;
-  background-color: rgb(22, 17, 78);
+  background-color: #104C91;
   height: 10vh;
   margin: 0;
   padding: 0;
@@ -18,7 +18,7 @@ header ul {
   align-items: center;
 }
 
-header div {
+.header-index div {
   text-align: right;
   font-size: 2.5rem;
   color: white;
@@ -26,8 +26,8 @@ header div {
   padding: 0 1vw 0 0;
 }
 
-header img {
-  height: 7.5vh;
+.header-index img {
+  height: 5.5vh;
 }
 
 section {
@@ -39,7 +39,7 @@ section .main {
   grid-template-columns: 1.5fr 1fr;
   align-items: center;
   list-style: none;
-  border: 2px solid rgb(154, 154, 212);
+  border: 2px solid #104C91;
   border-radius: 10px;
   padding-inline-start: 0;
 }
@@ -59,7 +59,7 @@ section .main .description {
 
 section .main .description a {
   text-decoration: none;
-  color: rgb(31, 31, 212);
+  color: #104C91;
 }
 
 section .main .description a:hover {
@@ -71,7 +71,7 @@ section .main .description a:hover {
     grid-template-columns: 1fr;
   }
 
-  header h1 {
+  .header-index h1 {
     font-size: 2rem;
   }
 }
@@ -95,7 +95,7 @@ section .main .description a:hover {
 }
 
 @media (max-height: 300px) {
-  header ul {
+  .header-index ul {
     height: 20vh;
   }
 }
