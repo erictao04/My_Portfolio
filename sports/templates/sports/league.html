@@ -2,6 +2,10 @@
 {% load sports_extra %}
 {% block content %}
 <section class="teams">
+    <div class="search">
+        <label class="search-label" for="search">Search</label>
+        <input type="text" class="search-bar" id="search">
+    </div>
     <div class="current-site">
         {% lower league.name as lower_league %}
 

@@ -1,0 +1,16 @@
+.search {
+  text-align: center;
+  margin: 5vh 0 0 0;
+}
+
+.search-bar {
+  width: 25vw;
+  height: 2rem;
+  vertical-align: middle;
+}
+.search-label {
+  text-align: center;
+  font-size: 2rem;
+  vertical-align: middle;
+  margin-right: 0.5vw;
+}
