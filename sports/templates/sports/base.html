@@ -73,11 +73,11 @@
                 {% for league in leagues %}
                     {% lower league.name as lower_league %}
                     <li class="mobile-menu">
-                        <a href="{% url 'sports:league'  lower_league %}">{{ league.name }}</a>
+                        <div><a href="{% url 'sports:league'  lower_league %}">{{ league.name }}</a></div>
                         
                         <label class="side-checkbtn">
                             <input type="checkbox"  class="side-check">
-                            <i class="fas fa-angle-right"></i>
+                            <i class="fas fa-angle-right" height='28px'></i>
                             <ul class="sidedrop">
                                 {% league_teams league as teams %}
                                 {% for team in teams %}

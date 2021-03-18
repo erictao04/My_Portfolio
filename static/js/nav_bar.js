@@ -19,3 +19,4 @@ function add_content(section) {
     section.style.display = 'block';
     display = true;
 }
+

@@ -90,6 +90,13 @@ nav.main ul.leagues-btn li a {
   text-decoration: none;
   color: white;
 }
+
+nav.main ul.leagues-btn li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 nav.main ul.leagues-btn a:hover {
   border: 1.5px solid #1f8ac0;
   border-radius: 1rem;
