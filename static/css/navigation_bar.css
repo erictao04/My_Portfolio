@@ -14,7 +14,7 @@ header {
 nav.main {
   display: grid;
   grid-template-columns: 275px 1fr 300px;
-  background-color: #104C91;
+  background-color: #104c91;
   height: 10vh;
   align-items: center;
 }
@@ -48,7 +48,6 @@ nav.main p.current-site {
 
 nav.main p.current-site img {
   vertical-align: middle;
-
 }
 
 nav.main p.current-site a {
@@ -74,12 +73,13 @@ nav.main #check {
 }
 
 nav.main ul.leagues-btn {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   list-style: none;
   margin: 0;
   padding: 0;
   font-size: 2.2rem;
+  text-align: center;
 }
 
 nav.main ul.leagues-btn > li:first-child {
@@ -89,12 +89,11 @@ nav.main ul.leagues-btn > li:first-child {
 nav.main ul.leagues-btn li a {
   text-decoration: none;
   color: white;
-  border-radius: 5px;
 }
-nav.main ul.leagues-btn li a:hover {
-  color: #EFC9AF;
-  transition: 0.2s;
-  
+nav.main ul.leagues-btn a:hover {
+  border: 1.5px solid #1f8ac0;
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 nav.main .side-check {
