@@ -5,8 +5,9 @@
 
 .search-bar {
   width: 25vw;
-  height: 2rem;
+  height: 2.2rem;
   vertical-align: middle;
+  font: 2rem serif;
 }
 .search-label {
   text-align: center;
