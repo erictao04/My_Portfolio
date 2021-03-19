@@ -14,7 +14,7 @@ nav.leagues .grid {
   list-style: none;
   margin: 0;
   padding: 0 10vw 0 10vw;
-  background-color: #1F8AC0;
+  background-color: #1f8ac0;
   position: sticky;
   top: 0;
 }
@@ -32,12 +32,12 @@ nav.leagues .grid > li > a {
 }
 
 nav.leagues .grid > li:hover {
-  background-color: #104C91;
+  background-color: #104c91;
   transition: 0.3s;
 }
 
 nav.leagues .grid > li:hover a {
-  color: #EFC9AF;
+  color: #efc9af;
 }
 
 nav.leagues .dropdown {
@@ -53,9 +53,9 @@ nav.leagues .dropdown {
   font-size: 2rem;
   background-color: rgb(233, 239, 245);
 
-  border-bottom: 2px solid #1F8AC0;
-  border-left: 2px solid #1F8AC0;
-  border-right: 2px solid #1F8AC0;
+  border-bottom: 2px solid #1f8ac0;
+  border-left: 2px solid #1f8ac0;
+  border-right: 2px solid #1f8ac0;
 
   border-radius: 0 0 3rem 3rem;
 }
@@ -79,7 +79,7 @@ nav.leagues .grid > li .dropdown li a {
 }
 
 nav.leagues .grid > li .dropdown li a:hover {
-  color: #104C91;
-  text-decoration: underline;
-  transition: 0.3s;
+  border: 1.5px solid #1f8ac0;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
 }

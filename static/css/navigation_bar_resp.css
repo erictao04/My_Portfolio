@@ -88,7 +88,7 @@
 
   nav.main ul.leagues-btn .mobile-menu > div a {
     text-align: center;
-    padding: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
   }
 
   nav.main ul.leagues-btn .mobile-menu > div a:hover {

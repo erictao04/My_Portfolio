@@ -1,4 +1,9 @@
-:is(a, .checkbtn, .side-checkbtn) {
+:is(a, .checkbtn, .side-checkbtn, i) {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+body {
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
