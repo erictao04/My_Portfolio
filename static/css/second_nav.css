@@ -70,7 +70,7 @@ nav.leagues .grid > li .dropdown li {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3vh;
+  height: 5vh;
 }
 
 nav.leagues .grid > li .dropdown li a {

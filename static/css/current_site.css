@@ -3,19 +3,12 @@ div.current-site {
   text-align: center;
   margin-top: 1.5vh;
   display: none;
-  padding: 1.2rem;
   padding: 1.8rem;
 }
 
 section .current-site a {
-  text-decoration: none;
-  color: black;
-  padding: 1rem;
-}
-
-section .current-site a:hover {
-  border: 1.5px solid #1f8ac0;
-  border-radius: 1rem;
+  text-decoration: underline;
+  color: #104c91;
 }
 
 @media (max-width: 1000px) {

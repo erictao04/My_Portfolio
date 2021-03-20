@@ -159,17 +159,30 @@
     nav.main {
       height: 20vh;
     }
+    nav.leagues .grid > li .dropdown li {
+      height: 5.5vh;
+    }
   }
 
   @media (max-height: 350px) {
     nav.main {
       height: 25vh;
     }
+    nav.leagues .grid > li .dropdown li a:hover {
+      padding: 0.2rem 1rem 0.2rem 1rem;
+    }
   }
 
   @media (max-height: 275px) {
     nav.main {
       height: 30vh;
+    }
+    nav.leagues .grid > li .dropdown li {
+      height: 4.5vh;
+      font-size: 1.5rem;
+    }
+    nav.leagues .grid > li .dropdown li a:hover {
+      padding: 0.05rem 1rem 0.05rem 1rem;
     }
   }
 }

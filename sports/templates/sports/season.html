@@ -6,8 +6,9 @@
     <div class="current-site">
         {% lower league.name as lower_league %}
         {% lower team.name as lower_team %}
-        <a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}&nbsp;{{ season.year }}</a>
-
+        <div class="current-site-container">
+            <a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}&nbsp;{{ season.year }}</a>
+        </div>
     </div>
     <div class="header">
         View Stats Insite
