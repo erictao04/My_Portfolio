@@ -56,7 +56,7 @@ body {
   border-radius: 0 0 3rem 3rem;
 }
 
-.dropdown {
+.second-nav-league:hover .dropdown {
   visibility: visible;
   z-index: 1;
 }
