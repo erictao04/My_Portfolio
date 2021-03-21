@@ -88,8 +88,19 @@
   }
 
   .mobile-team {
-    display: block;
-    padding: 2vh 0 2vh 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+  }
+
+  .mobile-team a {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+
+  .mobile-team a:hover {
+    border: 1px solid #104c91;
+    border-radius: 1rem;
   }
 
   #check:checked ~ .nav-leagues-btn {

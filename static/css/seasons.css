@@ -39,6 +39,10 @@ section.seasons {
 }
 
 @media (max-width: 750px) {
+  .season-years {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
   .season-year-link {
     font-size: 2.5rem;
   }
