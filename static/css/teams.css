@@ -6,13 +6,7 @@ section.teams {
   margin-top: 0;
 }
 
-section.teams .message {
-  text-align: center;
-  font-size: 2.3rem;
-  margin-top: 5vh;
-}
-
-section.teams ul {
+.league-teams {
   margin-top: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -20,7 +14,7 @@ section.teams ul {
   padding: 3vh 7vw 0 7vw;
 }
 
-section.teams ul li {
+.league-team {
   margin: 0;
   display: flex;
   justify-content: center;
@@ -28,39 +22,39 @@ section.teams ul li {
   height: 8vh;
 }
 
-section.teams ul li a {
+.league-team-link {
   text-decoration: none;
   font-size: 2rem;
   color: black;
 }
 
-section.teams ul a:hover {
+.league-team-link:hover {
   border: 1.5px solid #1f8ac0;
   border-radius: 1rem;
   padding: 1rem;
 }
 
-section.teams ul a:active {
+.league-team-link:active {
   border: 1px solid #1f8ac0;
 }
 
 @media (max-width: 750px) {
-  section.teams ul li a {
+  .league-team-link {
     font-size: 2.5rem;
   }
 }
 
 @media (max-width: 300px) {
-  section.teams ul {
+  .league-teams {
     grid-template-columns: 1fr;
   }
-  section.teams ul li a {
+  .league-team-link {
     font-size: 1.25rem;
   }
 }
 
 @media (max-height: 500px) {
-  section.teams ul {
+  .league-teams {
     padding: 8vh 7vw 0 7vw;
     gap: 10vh 0vw;
   }

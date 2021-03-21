@@ -10,7 +10,7 @@
             <a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}&nbsp;{{ season.year }}</a>
         </div>
     </div>
-    <div class="header">
+    <div class="downloads-header">
         View Stats Insite
     </div>
     <ul class="sites">
@@ -44,7 +44,7 @@
             <li><a href="https://www.pro-football-reference.com/teams/{{ url_foot_ref }}.htm" target="_blank"><img src="{% static 'img/profootballreference.svg' %}" height="40px"></a></li>
         {% endif %}
     </ul>
-    <div class="header">
+    <div class="downloads-header">
         Exports Stats
     </div>
     {% if league.name == "NHL" %}
@@ -52,7 +52,7 @@
             <li>
                 <form method="post">
                 {% csrf_token %}
-                <button type="submit" name="xlsx_script">
+                <button type="submit" name="xlsx_script" class="export-btn">
                     <div class="image"><img src="{% static 'img/excel.png' %}" height="100px"></div>
                     <i class="fas fa-spinner fa-spin"></i>
                     {% if post_xlsx %}
@@ -63,7 +63,7 @@
             </form></li>
             <li><form method="post">
                 {% csrf_token %}
-                <button type="submit" name="pdf_script">
+                <button type="submit" name="pdf_script" class="export-btn">
                     <div class="image"><img src="{% static 'img/pdf.svg' %}" height="100px"></div>
                     <i class="fas fa-spinner fa-spin"></i>
                     {% if post_pdf_html %}
@@ -74,7 +74,7 @@
             </li>
             <li><form method="post">
                 {% csrf_token %}
-                <button type="submit" name="csv_script">
+                <button type="submit" name="csv_script" class="export-btn">
                     <div class="image"><img src="{% static 'img/csv.png' %}" height="100px"></div>
                     <i class="fas fa-spinner fa-spin"></i>
                     {% if post_csv %}
@@ -85,7 +85,7 @@
             </li>
             <li><form method="post">
                 {% csrf_token %}
-                <button type="submit" name="json_script">
+                <button type="submit" name="json_script" class="export-btn">
                     <div class="image"><img src="{% static 'img/json.png' %}" height="100px"></div>
                     <i class="fas fa-spinner fa-spin"></i>
                     {% if post_json %}

@@ -13,11 +13,11 @@
 
         <a href="{% url 'sports:league' lower_league %}">{% clean_name team %}</a>
     </div>
-    <ul>
+    <ul class="season-years"> 
         {% lower league.name as lower_league %}
         {% lower team.name as lower_team %}
         {% for season in seasons %}
-            <li><a href="{% url 'sports:season' lower_league lower_team season.year %}">{{ season.year }}</a></li>
+            <li class="season-year"><a href="{% url 'sports:season' lower_league lower_team season.year %}" class="season-year-link">{{ season.year }}</a></li>
         {% endfor %}
     </ul>
 </section>

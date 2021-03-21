@@ -11,11 +11,11 @@
 
         <a href="{% url 'sports:index' %}">{{ league.name }}&nbsp;Teams</a>
     </div>
-    <ul>
+    <ul class="league-teams">
         {% lower league.name as lower_league %}
         {% for team in teams %}
             {% lower team.name as lower_team %}
-            <li><a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}</a></li>
+            <li class="league-team"><a href="{% url 'sports:team' lower_league lower_team %}" class="league-team-link">{% clean_name team %}</a></li>
         {% endfor %}
     </ul>
 </section>

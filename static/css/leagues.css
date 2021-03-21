@@ -2,7 +2,7 @@ html {
   font-size: 10px;
 }
 
-section.leagues ul {
+.index-leagues {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   padding: 0 10vw 0 10vw;
@@ -12,8 +12,8 @@ section.leagues ul {
   align-items: center;
 }
 
-section.leagues ul .league {
-  border: 2px solid #104C91;
+.index-league {
+  border: 2px solid #104c91;
   border-radius: 1rem;
   display: grid;
   grid-template-columns: 145px 1fr;
@@ -23,32 +23,32 @@ section.leagues ul .league {
   height: 100px;
 }
 
-section.leagues ul .league .message {
+.league-message {
   padding: 0 1.5vw 0 1.5vw;
 }
 
 @media (max-width: 750px) {
-  section.leagues ul {
+  .index-leagues {
     font-size: 1.5rem;
     grid-template-columns: 1fr;
   }
 
-  section.leagues ul .league {
+  .index-league {
     grid-template-columns: 65px 1fr;
   }
 
-  section.leagues ul .league:nth-child(1) img {
+  .index-league:nth-child(1) img {
     height: 60px;
   }
 
-  section.leagues ul .league:nth-child(2) img {
+  .index-league:nth-child(2) img {
     height: 80px;
   }
 
-  section.leagues ul .league:nth-child(3) img {
+  .index-league:nth-child(3) img {
     width: 60px;
   }
-  section.leagues ul .league:nth-child(4) img {
+  .index-league:nth-child(4) img {
     height: 60px;
   }
 }

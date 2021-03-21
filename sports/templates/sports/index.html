@@ -6,23 +6,24 @@
     <div class="current-site">
         <a href="{% url 'index' %}">Leagues</a>
     </div>
-    <ul>
-        <div class="league">
+    <ul class="index-leagues">
+        <div class="index-league">
             <a href="{% url 'sports:league' 'nhl' %}"><img src="{% static 'img/nhl_logo.png' %}" alt="NHL Logo" height="90px"></a>
-            <div class="message">View and download stats of any NHL team now!</div>
+            <div class="league-message">View and download stats of any NHL team now!</div>
         </div>
-        <div class="league">
+        <div class="index-league">
             <a href="{% url 'sports:league' 'nba' %}"><img src="{% static 'img/nba_logo.png' %}" alt="NBA Logo" height="100px"></a>
-            <div class="message">View stats of any NBA team now!</div>
+            <div class="league-message">View stats of any NBA team now!</div>
         </div>
-        <div class="league">
+        <div class="index-league">
             <a href="{% url 'sports:league' 'mlb' %}"><img src="{% static 'img/mlb_logo.png' %}" alt="MLB Logo" width="110px"></a>
-            <div class="message">View stats of any MLB team now!</div>
+            <div class="league-message">View stats of any MLB team now!</div>
         </div>
-        <div class="league">
+        <div class="index-league">
             <a href="{% url 'sports:league' 'nfl' %}"><img src="{% static 'img/nfl_logo.png' %}" alt="NFL Logo" height="90px"></a>
-            <div class="message">View stats of any NFL team now!</div>
+            <div class="league-message">View stats of any NFL team now!</div>
         </div>
     </ul>
 </section>
 {% endblock %}
+

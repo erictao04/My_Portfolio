@@ -1,5 +1,5 @@
 @media (max-width: 1250px) {
-  nav.main p.current-site a {
+  .nav-current-site a {
     font-size: 2.5rem;
   }
 }
@@ -10,33 +10,33 @@
     grid-template-rows: 1fr;
     height: 10vh;
   }
-  nav.main ul.home-btns li.home-btn {
+  .home-btn {
     font-size: 2.5rem;
   }
-  nav.main .home-btns li:nth-child(2) {
+  .sports-btn {
     display: none;
   }
 
-  nav.main p.current-site a:first-child {
+  .nav-current-site a:not(.logo) {
     display: none;
   }
 
-  nav.main .checkbtn {
+  .checkbtn {
     display: block;
   }
 
-  nav.main .side-checkbtn {
+  .side-checkbtn {
     display: inline-block;
   }
 
-  nav.main ul.leagues-btn > li:first-child {
+  .mobile-sports-home {
     display: block;
     margin: 4vh 0 0 3vw;
     font-size: 1.5rem;
     text-align: left;
   }
 
-  nav.main ul.leagues-btn {
+  .nav-leagues-btn {
     display: block;
     text-align: left;
     grid-column: 1/4;
@@ -51,7 +51,8 @@
     transition: 0.5s;
     font-size: 2.5rem;
   }
-  nav.main ul.leagues-btn .mobile-menu {
+
+  .mobile-menu {
     padding: 3vh 0 3vh 7vw;
     display: grid;
     grid-template-columns: 65px 1fr;
@@ -60,61 +61,54 @@
     align-items: flex-start;
   }
 
-  nav.main ul.leagues-btn .mobile-menu > div {
+  .mobile-league {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 30px;
   }
 
-  nav.main ul.leagues-btn .mobile-menu label {
+  .mobile-league a {
+    text-align: center;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+
+  .mobile-league a:hover {
+    border: 1.5px solid #104c91;
+  }
+
+  .side-checkbtn {
     text-align: left;
   }
 
-  nav.main i.fas.fa-angle-right {
+  .side-checkbtn i {
     font-size: 28px;
     display: flex;
     align-items: flex-start;
   }
 
-  nav.main ul.leagues-btn .mobile-menu li {
+  .mobile-team {
     display: block;
+    padding: 2vh 0 2vh 5vw;
   }
 
-  nav.main ul.leagues-btn a:hover {
-    border: none;
-    padding: 0;
-  }
-
-  nav.main ul.leagues-btn .mobile-menu > div a {
-    text-align: center;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-  }
-
-  nav.main ul.leagues-btn .mobile-menu > div a:hover {
-    border: 1.5px solid #104c91;
-  }
-
-  nav.main #check:checked ~ ul.leagues-btn {
+  #check:checked ~ .nav-leagues-btn {
     right: 0;
     position: absolute;
   }
 
-  nav.main .side-check:checked ~ .sidedrop {
+  .side-check:checked ~ .sidedrop {
     display: block;
     list-style: none;
     font-size: 2rem;
   }
 
-  nav.main .side-check:checked ~ .sidedrop li {
-    padding: 2vh 0 2vh 5vw;
-  }
   @media (max-height: 500px) {
     nav.main {
       height: 15vh;
     }
 
-    nav.main ul.leagues-btn {
+    .nav-leagues-btn {
       top: 15vh;
     }
   }
@@ -123,10 +117,10 @@
     nav.main {
       height: 20vh;
     }
-    nav.main p.current-site img {
+    .nav-current-site img {
       height: 35px;
     }
-    nav.main ul.leagues-btn {
+    .nav-leagues-btn {
       top: 20vh;
     }
   }
@@ -134,7 +128,7 @@
     nav.main {
       height: 30vh;
     }
-    nav.main ul.leagues-btn {
+    .nav-leagues-btn {
       top: 30vh;
     }
   }
@@ -142,7 +136,7 @@
     nav.main {
       height: 40vh;
     }
-    nav.main ul.leagues-btn {
+    .nav-leagues-btn {
       top: 40vh;
     }
   }

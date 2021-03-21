@@ -10,13 +10,13 @@ section {
   max-width: 100vw;
 }
 
-section.downloads .header {
+.downloads-header {
   font-size: 2.5rem;
   margin: 5vh 0 5vh 0;
   text-align: center;
   max-width: 100vw;
 }
-section.downloads .sites {
+.sites {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   font-size: 2.3rem;
@@ -27,7 +27,7 @@ section.downloads .sites {
   align-items: center;
 }
 
-section.downloads .export {
+.export {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   font-size: 2.3rem;
@@ -37,13 +37,13 @@ section.downloads .export {
   align-items: center;
 }
 
-section.downloads :is(.sites, .export) li {
+:is(.sites, .export) li {
   display: flex;
   list-style: none;
   justify-content: left;
 }
 
-section.downloads form button {
+.export-btn {
   font-size: 2.3rem;
   background-color: inherit;
   box-shadow: inherit;
@@ -53,65 +53,65 @@ section.downloads form button {
   width: 100%;
 }
 
-section.downloads form button:hover {
+.export-btn:hover {
   color: rgb(62, 62, 180);
 }
-section.downloads form button:focus {
+.export-btn:focus {
   outline: none;
 }
 
-section.downloads .error_message {
+.error_message {
   font-size: 4rem;
   text-align: center;
   text-decoration: underline;
 }
 
-section.downloads .download_link {
+.download_link {
   font-size: 4rem;
   text-align: center;
   margin-bottom: 10vh;
 }
 
-section.downloads .download_link a {
+.download_link a {
   color: black;
   text-decoration: underline;
 }
 
-section.downloads .coming-soon a {
-  color: black;
-}
-
-section.downloads :is(.download_link, .coming-soon) a:hover {
+:is(.download_link, .coming-soon) a:hover {
   text-decoration: none;
   color: rgb(62, 62, 180);
 }
 
-section.downloads .coming-soon {
+.coming-soon {
   padding-left: 10.5vw;
   font-size: 2.3rem;
 }
 
-section.downloads .export button i {
+.coming-soon a {
+  color: black;
+}
+
+.export button i {
   display: none;
 }
 
-section.downloads .export button i:nth-child(3) {
+.export button i:nth-child(3) {
   display: block;
 }
 
 @media (max-width: 850px) {
-  section.downloads .sites {
+  .sites {
     grid-template-columns: 1fr;
     justify-items: center;
   }
-  section.downloads .export {
+  .export {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   }
 }
 
 @media (max-width: 300px) {
-  section.downloads .export {
+  .export {
     grid-template-columns: 1fr;
   }
 }

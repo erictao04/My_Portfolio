@@ -19,14 +19,14 @@ nav.main {
   align-items: center;
 }
 
-nav.main ul.home-btns {
+.nav-home-btns {
   display: grid;
   grid-template-rows: repeat(2, fr);
   margin: 0;
   padding: 0;
 }
 
-nav.main ul.home-btns li {
+:is(.home-btn, .sports-btn) {
   list-style: none;
   font-size: 2rem;
   height: 35px;
@@ -35,44 +35,37 @@ nav.main ul.home-btns li {
   align-items: center;
 }
 
-nav.main ul.home-btns li:first-child {
+.home-btn {
   width: 70px;
   padding-left: 2.7vw;
+  font-size: 2rem;
 }
 
-nav.main ul.home-btns li:nth-child(2) {
+.sports-btn {
   width: 220px;
   padding-left: 2vw;
 }
 
-nav.main ul.home-btns li a {
+:is(.home-btn, .sports-btn) a {
   margin: 0;
   text-decoration: none;
   padding: 1rem;
   color: white;
 }
 
-nav.main ul.home-btns li a:hover {
+:is(.home-btn, .sports-btn) a:hover {
   border: 1.5px solid #1f8ac0;
   border-radius: 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
-nav.main ul.home-btns li.home-btn {
-  font-size: 2rem;
-}
-
-nav.main p.current-site {
+.nav-current-site {
   display: inline-block;
   text-align: center;
   margin: 0;
 }
 
-nav.main p.current-site img {
-  vertical-align: middle;
-}
-
-nav.main p.current-site a {
+.nav-current-site a {
   text-decoration: none;
   color: white;
   font-size: 3rem;
@@ -80,7 +73,12 @@ nav.main p.current-site a {
   text-decoration-thickness: 1px;
   vertical-align: middle;
 }
-nav.main .checkbtn {
+
+.nav-current-site img {
+  vertical-align: middle;
+}
+
+.checkbtn {
   font-size: 3rem;
   color: white;
   cursor: pointer;
@@ -89,12 +87,12 @@ nav.main .checkbtn {
   display: none;
 }
 
-nav.main #check {
+#check {
   display: none;
   background-color: rgb(22, 17, 78);
 }
 
-nav.main ul.leagues-btn {
+.nav-leagues-btn {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   list-style: none;
@@ -104,32 +102,32 @@ nav.main ul.leagues-btn {
   text-align: center;
 }
 
-nav.main ul.leagues-btn > li:first-child {
+.mobile-sports-home {
   display: none;
 }
 
-nav.main ul.leagues-btn li a {
+.nav-leagues-btn a {
   text-decoration: none;
   color: white;
 }
 
-nav.main ul.leagues-btn li {
+.mobile-menu {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-nav.main ul.leagues-btn a:hover {
+.mobile-league a:hover {
   border: 1.5px solid #1f8ac0;
   border-radius: 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
-nav.main .side-check {
+.side-check {
   display: none;
 }
 
-nav.main .side-checkbtn {
+.side-checkbtn {
   font-size: 3rem;
   color: white;
   cursor: pointer;

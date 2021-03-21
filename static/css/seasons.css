@@ -5,7 +5,7 @@ section.seasons {
   margin-top: 0;
 }
 
-section.seasons ul {
+.season-years {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 3vh 2vw;
@@ -15,7 +15,7 @@ section.seasons ul {
   margin: 0;
 }
 
-section.seasons ul li {
+.season-year {
   display: flex;
   height: 7vh;
   align-items: center;
@@ -23,28 +23,28 @@ section.seasons ul li {
   border: 0;
 }
 
-section.seasons ul a {
+.season-year-link {
   text-decoration: none;
   font-size: 2rem;
   color: black;
 }
-section.seasons ul a:hover {
+.season-year-link:hover {
   border: 1.5px solid #1f8ac0;
   border-radius: 1rem;
   padding: 1rem;
 }
 
-section.seasons ul a:active {
+.season-year-link:active {
   border: 1.5px solid #1f8ac0;
 }
 
 @media (max-width: 750px) {
-  section.seasons ul a {
+  .season-year-link {
     font-size: 2.5rem;
   }
 }
 @media (max-height: 500px) {
-  section.seasons ul {
+  .season-years {
     padding: 8vh 7vw 0 7vw;
     gap: 15vh 0vw;
   }

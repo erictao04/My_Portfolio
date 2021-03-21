@@ -35,29 +35,29 @@
 
     </head>
     <body>
-        <header>
+    <header>
         <nav class="main">
-            <ul class="home-btns">
+            <ul class="nav-home-btns">
                 <li class="home-btn"><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'sports:index' %}">Download Sports Stats</a></li>
+                <li class="sports-btn"><a href="{% url 'sports:index' %}">Download Sports Stats</a></li>
             </ul>
 
             {% load sports_extra %}
-            <p class="current-site">
+            <p class="nav-current-site">
                 {% lower league.name as lower_league %}
                 {% lower team.name as lower_team %}
                 {% if season %}
                     <a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}&nbsp;{{ season.year }}</a>
-                    <a href="{% url 'sports:team' lower_league lower_team %}"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a>
+                    <a href="{% url 'sports:team' lower_league lower_team %}" class="logo"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a>
                 {% elif team %}
                     <a href="{% url 'sports:league' lower_league %}">{% clean_name team %}</a>
-                    <a href="{% url 'sports:league' lower_league %}"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a>
+                    <a href="{% url 'sports:league' lower_league %}" class="logo"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a>
                 {% elif league %}
                     <a href="{% url 'sports:index' %}">{{ league.name }}&nbsp;Teams</a> 
-                    <a href="{% url 'sports:index' %}"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a> 
+                    <a href="{% url 'sports:index' %}" class="logo"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a> 
                 {% else %}
                     <a href="{% url 'index' %}">Leagues</a>
-                    <a href="{% url 'index' %}"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a>
+                    <a href="{% url 'index' %}" class="logo"><img src="{% static 'img/new_logo_raw.png' %}" alt="My Logo" height="50px"></a>
                 {% endif %}
                 
             </p>
@@ -67,13 +67,13 @@
                 <i class="fa fa-bars"></i>
             </label>
 
-            <ul class="leagues-btn">
-                <li><a href="{% url 'sports:index' %}">Download Sports Stats</a></li>
+            <ul class="nav-leagues-btn">
+                <li class="mobile-sports-home"><a href="{% url 'sports:index' %}">Download Sports Stats</a></li>
                 
                 {% for league in leagues %}
                     {% lower league.name as lower_league %}
                     <li class="mobile-menu">
-                        <div><a href="{% url 'sports:league'  lower_league %}">{{ league.name }}</a></div>
+                        <div class="mobile-league"><a href="{% url 'sports:league'  lower_league %}">{{ league.name }}</a></div>
                         
                         <label class="side-checkbtn">
                             <input type="checkbox"  class="side-check">
@@ -82,7 +82,7 @@
                                 {% league_teams league as teams %}
                                 {% for team in teams %}
                                     {% lower team.name as lower_team %}
-                                    <li><a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}</a></li>
+                                    <li class="mobile-team"><a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}</a></li>
                                 {% endfor %}
                             </ul>
                         </label>
@@ -92,16 +92,16 @@
             </ul>
         </nav>
         <nav class="leagues">
-            <ul class="grid">
+            <ul class="second-nav">
                 {% for league in leagues %}
-                <li>
+                <li class="second-nav-league">
                     {% lower league.name as lower_league %}
                     <a href="{% url 'sports:league'  lower_league %}">{{ league.name }}</a>
                     <ul class="dropdown">
                         {% league_teams league as teams %}
                         {% for team in teams %}
                             {% lower team.name as lower_team %}
-                            <li><a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}</a></li>
+                            <li class="dropdown-team"><a href="{% url 'sports:team' lower_league lower_team %}">{% clean_name team %}</a></li>
                         {% endfor %}
                     </ul>
                 </li>

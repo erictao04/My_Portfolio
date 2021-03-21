@@ -8,7 +8,7 @@ body {
   color: black;
 }
 
-nav.leagues .grid {
+.second-nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   list-style: none;
@@ -18,11 +18,11 @@ nav.leagues .grid {
   position: sticky;
   top: 0;
 }
-nav.leagues .grid > li {
+.second-nav-league {
   text-align: center;
   padding: 1rem 0 1rem 0;
 }
-nav.leagues .grid > li > a {
+.second-nav-league > a {
   text-decoration: none;
   font-size: 2.5rem;
   display: flex;
@@ -31,16 +31,12 @@ nav.leagues .grid > li > a {
   color: white;
 }
 
-nav.leagues .grid > li:hover {
+.second-nav-league:hover {
   background-color: #104c91;
   transition: 0.3s;
 }
 
-nav.leagues .grid > li:hover a {
-  color: #efc9af;
-}
-
-nav.leagues .dropdown {
+.dropdown {
   display: grid;
   gap: 1.5vh;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -60,25 +56,25 @@ nav.leagues .dropdown {
   border-radius: 0 0 3rem 3rem;
 }
 
-nav.leagues li:hover .dropdown {
+.dropdown {
   visibility: visible;
   z-index: 1;
 }
 
-nav.leagues .grid > li .dropdown li {
+.dropdown-team {
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 5vh;
+  height: 3vh;
 }
 
-nav.leagues .grid > li .dropdown li a {
+.dropdown-team a {
   text-decoration: none;
   color: black;
 }
 
-nav.leagues .grid > li .dropdown li a:hover {
+.second-nav-league .dropdown-team a:hover {
   border: 1.5px solid #1f8ac0;
   border-radius: 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
