@@ -4,6 +4,10 @@ let listItem;
 let itemText;
 let inputValue;
 
+window.addEventListener('load', () => {
+    searchBar.focus()
+})
+
 searchBar.addEventListener('change', function() {
     resetItems();
     inputValue = searchBar.value;

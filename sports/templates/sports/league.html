@@ -7,7 +7,6 @@
         <input type="text" class="search-bar" id="search">
     </div>
     <div class="current-site">
-        {% lower league.name as lower_league %}
 
         <a href="{% url 'sports:index' %}">{{ league.name }}&nbsp;Teams</a>
     </div>
