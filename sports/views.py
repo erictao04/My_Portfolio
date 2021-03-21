@@ -43,9 +43,13 @@ def team(request, league_name, team_name):
     # league = League.objects.get(name=league_name.upper())
     league = League.objects.raw(
         "SELECT * FROM sports_league WHERE name = %s", [league_name.upper()])[0]
-    # team = Team.objects.get(name=team_name.title())
-    team = Team.objects.raw(
-        "SELECT * FROM sports_team WHERE name = %s", [team_name.title()])[0]
+    if team_name.lower() == 'philadelphia-76ers':
+        team = Team.objects.raw(
+            "Select * from sports_team WHERE name = 'Philadelphia-76ers'")[0]
+    else:
+        # team = Team.objects.get(name=team_name.title())
+        team = Team.objects.raw(
+            "SELECT * FROM sports_team WHERE name = %s", [team_name.title()])[0]
     # seasons = Season.objects.filter(team__name=team).order_by('-year')
     seasons = Season.objects.raw(
         "SELECT * FROM sports_season JOIN sports_season_team ON season_id = sports_season.id WHERE team_id = %s ORDER BY year DESC", [team.id])
