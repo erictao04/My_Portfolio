@@ -46,7 +46,7 @@ nav.main {
   padding-left: 2vw;
 }
 
-:is(.home-btn, .sports-btn) a {
+.nav-home-btns a {
   margin: 0;
   text-decoration: none;
   padding: 1rem;
