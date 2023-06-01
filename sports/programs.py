@@ -10,10 +10,11 @@ from bs4 import BeautifulSoup
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 from pathlib import Path
-import pandas as pd
-from jinja2 import Environment, FileSystemLoader
+#import pandas as pd
+#from jinja2 import Environment, FileSystemLoader
 import pdfkit
 import pydf
+import time
 
 
 class NhlStats:
@@ -141,7 +142,9 @@ class NhlStats:
                 stats_sheet.row_dimensions[i].height = 25
 
         def get_path(export_type):
+            print("LOG ++++ " + self.folder)
             if self.folder == "default":
+                print('is default')
                 if self.titled_folder:
                     filepath = Path(Path.cwd())/self.team.title() / \
                         f'{self.team.title()}_{self.season}.{export_type}'
@@ -160,6 +163,7 @@ class NhlStats:
                     folder = Path(self.folder)/self.team.lower()
                     filepath = folder / \
                         f'{self.team.lower()}_{self.season}.{export_type}'
+                print(folder)
                 os.makedirs(folder, exist_ok=True)
             return filepath
 
@@ -188,15 +192,18 @@ class NhlStats:
             except IndexError:
                 print(f'Downloaded {self.team} {self.season}')
                 break
-
+        
+        print("bfore get path")
         filepath = get_path(self.export_type)
+        print(filepath)
 
         if self.export_type == "xlsx":
             stats_wb.save(filepath)
 
         elif self.export_type == "pdf_html":
+            return
             stats_wb.save(get_path("xlsx"))
-            pd_df = pd.read_excel(str(get_path("xlsx")))
+            #pd_df = pd.read_excel(str(get_path("xlsx")))
 
             env = Environment(loader=FileSystemLoader('.'))
             template = env.get_template('templates/download_stats.html')
@@ -259,6 +266,7 @@ class NhlStats:
                     "pdf")), configuration=config, options={'quiet': ''})
 
         elif self.export_type == "csv":
+            print(os.listdir(str(Path.cwd()/"media")))
             with open(filepath, 'w') as csv_file:
                 csv_writer = csv.writer(csv_file)
                 for row in stats_sheet.rows:
@@ -278,5 +286,8 @@ class NhlStats:
             with open(filepath, 'w') as export_file:
                 out = json.dumps(json_file, indent=4)
                 export_file.write(out)
+
+        while not os.path.exists(filepath):
+            time.sleep(.5)
 
         return str(filepath)

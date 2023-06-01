@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 from send2trash import send2trash
 from .programs import NhlStats
+import time
 # Create your views here.
 
 
@@ -70,9 +71,12 @@ def season(request, league_name, team_name, season_year):
         for file_folder in os.listdir(str(Path.cwd()/'media')):
             if file_folder.endswith('.txt'):
                 continue
-            send2trash(str(Path.cwd()/'media'/file_folder))
+            for file in os.listdir(str(Path.cwd()/'media'/file_folder)):
+                send2trash(str(Path.cwd()/'media'/file_folder/file))
 
     def export_nhl(export_type):
+        print(os.listdir(str(Path.cwd()/"media")))
+        # os.makedirs(Path(str(Path.cwd()/"media"))/team.name.title(), exist_ok=True)
         nhl_obj = NhlStats(
             team.name, season.year, folder=str(Path.cwd()/"media"), titled_folder=False, export_type=export_type).download()
         return nhl_obj
@@ -98,19 +102,31 @@ def season(request, league_name, team_name, season_year):
         if "xlsx_script" in request.POST:
             if league.name == "NHL":
                 link = export_nhl("xlsx")
+            print(os.listdir(str(Path.cwd()/"media")))
+            print(os.listdir(str(Path.cwd()/"media"/"montreal-canadiens")))
+            time.sleep(2)
             return render_link("xlsx")
 
         elif "pdf_script" in request.POST:
             if league.name == "NHL":
                 link = export_nhl("pdf_html")
+            print(os.listdir(str(Path.cwd()/"media")))
+            print(os.listdir(str(Path.cwd()/"media"/"montreal-canadiens")))
+            time.sleep(2)
             return render_link("pdf_html")
 
         elif "csv_script" in request.POST:
             if league.name == "NHL":
                 link = export_nhl("csv")
+            print(os.listdir(str(Path.cwd()/"media")))
+            print(os.listdir(str(Path.cwd()/"media"/"montreal-canadiens")))
+            time.sleep(2)
             return render_link('csv')
 
         elif "json_script" in request.POST:
             if league.name == "NHL":
                 link = export_nhl("json")
+            print(os.listdir(str(Path.cwd()/"media")))
+            print(os.listdir(str(Path.cwd()/"media"/"montreal-canadiens")))
+            time.sleep(2)
             return render_link("json")
