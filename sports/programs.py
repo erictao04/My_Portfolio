@@ -14,7 +14,6 @@ from pathlib import Path
 #from jinja2 import Environment, FileSystemLoader
 import pdfkit
 import pydf
-import time
 
 
 class NhlStats:
@@ -142,17 +141,13 @@ class NhlStats:
                 stats_sheet.row_dimensions[i].height = 25
 
         def get_path(export_type):
-            print("LOG ++++ " + self.folder)
             if self.folder == "default":
-                print('is default')
                 if self.titled_folder:
                     filepath = Path(Path.cwd())/self.team.title() / \
                         f'{self.team.title()}_{self.season}.{export_type}'
-                    os.makedirs(self.team.title(), exist_ok=True)
                 else:
                     filepath = Path(Path.cwd())/self.team.lower() / \
                         f'{self.team.lower()}_{self.season}.{export_type}'
-                    os.makedirs(self.team.lower(), exist_ok=True)
 
             else:
                 if self.titled_folder:
@@ -163,8 +158,6 @@ class NhlStats:
                     folder = Path(self.folder)/self.team.lower()
                     filepath = folder / \
                         f'{self.team.lower()}_{self.season}.{export_type}'
-                print(folder)
-                os.makedirs(folder, exist_ok=True)
             return filepath
 
         team = self.changed_name(self.team, self.season)
@@ -190,12 +183,9 @@ class NhlStats:
                 export_xlsx(index)
 
             except IndexError:
-                print(f'Downloaded {self.team} {self.season}')
                 break
         
-        print("bfore get path")
         filepath = get_path(self.export_type)
-        print(filepath)
 
         if self.export_type == "xlsx":
             stats_wb.save(filepath)
@@ -266,7 +256,6 @@ class NhlStats:
                     "pdf")), configuration=config, options={'quiet': ''})
 
         elif self.export_type == "csv":
-            print(os.listdir(str(Path.cwd()/"media")))
             with open(filepath, 'w') as csv_file:
                 csv_writer = csv.writer(csv_file)
                 for row in stats_sheet.rows:
@@ -286,8 +275,5 @@ class NhlStats:
             with open(filepath, 'w') as export_file:
                 out = json.dumps(json_file, indent=4)
                 export_file.write(out)
-
-        while not os.path.exists(filepath):
-            time.sleep(.5)
 
         return str(filepath)
