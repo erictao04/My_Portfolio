@@ -120,7 +120,7 @@ def url_db_values(team, season):
         'Philadelphia-Flyers': '000053',
         'Pittsburgh-Penguins': '000050',
         'San-Jose-Sharks': '000044',
-        'St-Louis-Blues': '000036',
+        'St.-Louis-Blues': '000036',
         'Tampa-Bay-Lightning': '000055',
         'Toronto-Maple-Leafs': '000038',
         'Vancouver-Canucks': '000039',

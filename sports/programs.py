@@ -49,7 +49,7 @@ class NhlStats:
             'Philadelphia-Flyers': 70,
             'Pittsburgh-Penguins': 71,
             'San-Jose-Sharks': 73,
-            'St-Louis-Blues': 74,
+            'St.-Louis-Blues': 74,
             'Tampa-Bay-Lightning': 75,
             'Toronto-Maple-Leafs': 76,
             'Vancouver-Canucks': 77,
