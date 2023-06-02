@@ -41,7 +41,7 @@ section {
 .export li {
   display: flex;
   list-style: none;
-  justify-content: left;
+  justify-content: center;
 }
 
 .export-btn {
